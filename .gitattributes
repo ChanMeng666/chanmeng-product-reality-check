@@ -1,0 +1,4 @@
+# Skill files are read by agents on every platform — keep them LF in the repo.
+* text=auto eol=lf
+*.json text eol=lf
+*.md text eol=lf
