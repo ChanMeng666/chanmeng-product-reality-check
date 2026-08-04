@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/product-reality-check/competitors.schema.json",
+  "title": "Competitor database",
+  "description": "data/competitors.json is an array of these. One entry per player found in the four-ring sweep (direct, adjacent up/down-market, non-product substitute, platform that could absorb this). Every entry carries last_verified; an entry older than 30 days is stale and may not be cited without re-verification.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "name",
+      "url",
+      "ring",
+      "target_user",
+      "pricing_model",
+      "price_points",
+      "strengths",
+      "weaknesses",
+      "threat_level",
+      "positioning_vs_you",
+      "kills_your_moat",
+      "sources",
+      "last_verified"
+    ],
+    "additionalProperties": true,
+    "properties": {
+      "name": { "type": "string" },
+      "url": { "type": "string", "description": "Canonical product URL." },
+      "ring": {
+        "type": "string",
+        "enum": ["direct", "adjacent-up", "adjacent-down", "substitute", "platform"],
+        "description": "Which ring of the sweep found it. 'substitute' = a non-product alternative (agency, freelancer, spreadsheet, doing nothing). 'platform' = an incumbent or general-purpose tool that could ship this as a feature."
+      },
+      "segment": {
+        "type": "string",
+        "description": "Free-text market segment label, defined per engagement (e.g. 'prosumer-ai', 'dev-tool', 'enterprise-suite')."
+      },
+      "target_user": { "type": "string", "description": "Who they sell to, in their own words where possible." },
+      "job_done": { "type": "string", "description": "The job the buyer hires them for." },
+      "pricing_model": {
+        "type": "string",
+        "description": "e.g. 'subscription per seat', 'per delivered unit', 'metered API', 'one-time', 'free / OSS'."
+      },
+      "price_points": {
+        "type": "array",
+        "items": { "type": "string" },
+        "description": "Actual prices with units, e.g. '$24.90/plan/month (Plus)'. Read off the pricing page this session."
+      },
+      "price_evidence_grade": {
+        "type": "string",
+        "enum": ["PAGE", "SNIPPET", "UNVERIFIED"],
+        "description": "PAGE = fetched the vendor page and read it. SNIPPET = a search result quotes it. UNVERIFIED = aggregator only; treat as false until proven."
+      },
+      "free_tier": { "type": "string", "description": "What the free tier actually grants, verified. A common source of refuted claims." },
+      "output_or_deliverable": { "type": "string", "description": "What the user walks away with." },
+      "integrations": { "type": "array", "items": { "type": "string" } },
+      "funding": {
+        "type": "object",
+        "properties": {
+          "total": { "type": "string" },
+          "last_round": { "type": "string" },
+          "date": { "type": "string", "description": "ISO date of last round." },
+          "investors": { "type": "array", "items": { "type": "string" } }
+        }
+      },
+      "traction_signals": {
+        "type": "string",
+        "description": "Users, downloads, stars, reviews, dependents — DECOMPOSED where possible, not as headline totals."
+      },
+      "trajectory": {
+        "type": "string",
+        "description": "Shipping fast / steady / dormant / retreating. Judge threat_level on this, not on current size. Note last release date."
+      },
+      "strengths": {
+        "type": "array",
+        "items": { "type": "string" },
+        "description": "Written honestly. An entry with no strengths is a tell that the research was performed to reassure."
+      },
+      "weaknesses": { "type": "array", "items": { "type": "string" } },
+      "review_signal": {
+        "type": "string",
+        "description": "What the one-star reviews say. The best free product research available."
+      },
+      "threat_level": { "type": "string", "enum": ["high", "medium", "low"] },
+      "threat_rationale": { "type": "string", "description": "Why that level — based on trajectory, not size." },
+      "positioning_vs_you": {
+        "type": "string",
+        "description": "One sentence naming the real difference AS A BUYER WOULD EXPERIENCE IT, not as your architecture describes it. Write 'none found' when there is none — that is the most valuable value this field can take."
+      },
+      "kills_your_moat": {
+        "type": "object",
+        "required": ["verdict", "explanation"],
+        "properties": {
+          "verdict": {
+            "type": "string",
+            "enum": ["yes", "partially", "no", "unknown"],
+            "description": "Does this player's existence refute your central differentiating claim? Answer per competitor, in the file."
+          },
+          "explanation": { "type": "string" },
+          "claim_affected": { "type": "string", "description": "The exact claim, quoted." }
+        }
+      },
+      "watch_trigger": {
+        "type": "string",
+        "description": "The specific observable change that would raise threat_level, and the cadence to check it."
+      },
+      "sources": {
+        "type": "array",
+        "items": { "type": "string" },
+        "description": "URLs fetched this session."
+      },
+      "last_verified": {
+        "type": "string",
+        "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+        "description": "ISO date. Stale after 30 days. Re-verify the entry your moat depends on FIRST."
+      },
+      "notes": { "type": "string" }
+    }
+  }
+}
