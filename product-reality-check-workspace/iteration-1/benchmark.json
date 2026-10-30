@@ -1,0 +1,307 @@
+{
+  "metadata": {
+    "skill_name": "product-reality-check",
+    "skill_path": "D:\\github_repository\\product-reality-check\\product-reality-check",
+    "executor_model": "claude-opus-5",
+    "analyzer_model": "claude-opus-5",
+    "timestamp": "2026-08-04T09:21:53Z",
+    "evals_run": [
+      0,
+      1
+    ],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 0,
+      "eval_name": "eval-0-echook-viability",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 6,
+        "failed": 0,
+        "total": 6,
+        "time_seconds": 0,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "The deliverable includes an explicit falsification section (e.g. 'What would prove this wrong') listing specific checkable observations that would change the conclusion.",
+          "passed": true,
+          "evidence": "VERDICT.md has a section headed 'What would prove all of this wrong' containing a 6-row table (Signal / Why it decides things / How to test / Cost), each row a checkable observation with a threshold and a named instrument: '>=25 people pay $5' (Polar/Lemon Squeezy licence, 14-day count, 1 afternoon), '>=2 of 20 named orgs ask for a quote', 'Telemetry shows >=100 machines/week firing hooks', 'A sound-related Claude Code issue crosses ~40 reactions', 'Anthropic ships per-event notification config', 'peon-ping ships per-event granularity'. It also states the decision rule ('Items 1 and 2 landing together overturn the verdict; anything else dents it') and adds a dated 'steelman I could not refute' with an expiry of 2026-11-04. Five of the six research reports carry their own falsification section too ('What would prove this wrong' in competitor-sweep, prior-art-audit, base-rates, who-pays-and-sizing, product-diagnostic, kill-memo)."
+        },
+        {
+          "text": "External market/competitor claims are backed by source URLs (at least 5 distinct URLs appear in the deliverables), rather than unsourced assertions from memory.",
+          "passed": true,
+          "evidence": "Mechanical count over the 15 output files: 113 distinct http(s) URLs across 53 distinct hosts (107 distinct cited hosts including bare-domain citations). Hosts span primary vendor docs (code.claude.com/docs/en/hooks, /statusline, /plugin-marketplaces, /skills, cursor.com/docs/hooks.md, developers.openai.com/plugins/build/monetization, claude.com/pricing), pricing pages (pushover.net, alfredapp.com, raycast.com, pagerduty.com, langfuse.com, helicone.ai, langchain.com), competitor repos (github.com/PeonPing/peon-ping, /ctoth/claudio, /DevinoSolutions/anotifier-for-claude-codex-cursor, /Haleclipse/CCometixLine, /JessyTsui/Claude-Code-Remote and ~20 more), APIs actually queried (api.npmjs.org, registry.npmjs.org, api.github.com, hn.algolia.com, api.opencollective.com) and academic sources (cmustrudel.github.io/papers/overney20donations.pdf, pubsonline.informs.org). Claims are additionally tagged inline with [PAGE] / [SNIPPET] provenance markers, and claim-ledger.md records a spot-check of 24 rows."
+        },
+        {
+          "text": "At least 2 named buyer archetypes are given, each with a concrete sourced price anchor (a real product/tier price, not an invented number).",
+          "passed": true,
+          "evidence": "research/market/2026-08-04-who-pays-and-sizing.md defines four named archetypes (A1 individual power user, A2 organisations locked out of the native path, A3 the AI-coding-tool vendors, A4 agent-observability SaaS), each with an explicit 'Price anchor [PAGE]' subsection carrying real, URL-sourced tier prices: A1 - Pushover $4.99 one-time (pushover.net/pricing), Alfred Powerpack GBP 34 / GBP 59 (alfredapp.com/powerpack), Raycast Free/Pro $8-mo/Teams $12-user-mo (raycast.com/pricing); A2 - Pushover for Teams $5/user/mo and PagerDuty Professional $25 monthly / $21 annual, Business $49/$41 (pagerduty.com/pricing); A4 - Langfuse Core $29 / Pro $199 / Enterprise $2,499 (langfuse.com/pricing), Helicone Pro $79 / Team $799 (helicone.ai/pricing), LangSmith Plus $39/seat (langchain.com/pricing-langsmith). Each anchor also carries an explicit analogy caveat naming why it is an upper bound rather than a comparable (e.g. 'Pushover operates a hosted push-delivery network ... $4.99 is an upper bound on echook's price, not a comparable'). A3 reports the absence of a price as the finding, backed by a sourced acquisition table (Bun, Svelte/Vercel, GitLens/GitKraken, Humanloop)."
+        },
+        {
+          "text": "There is an explicit, unhedged verdict classifying the opportunity (e.g. lifestyle/side-project vs venture-shaped, or 'keep it free'), with the conditions under which the verdict would flip \u2014 not 'it depends'.",
+          "passed": true,
+          "evidence": "VERDICT.md, 'The verdict, in one sentence': 'No - there is no business in echook as a product, and the research says the answer is already decided rather than undecided; the best remaining lane is echook as evidence of what you can build.' It quantifies: 'The realistic annual pool for the software ... is $0-$200. Not \"small.\" Not \"early.\" The median outcome is zero, and three of the four archetypes size to exactly zero.' Flip conditions are numeric and dated: strategy/viability.md defines gates G1-G4 with reporting dates (G1 reports 2026-08-25, G2 2026-08-18, G3 2026-09-01, G4 2026-09-04) and VERDICT.md prints both thresholds of the commercial test - '>= 25 payers -> GO. Falsifies the assumption carrying ~100% of the realistic pool' and '<= 4 payers -> stop the commercial track'. The verdict also self-limits honestly rather than hedging, flagging the recommended maintainer lane as 'explicitly unresearched'."
+        },
+        {
+          "text": "No 'first/only/no one else does this' claim about echook appears without accompanying prior-art evidence; adjacent/competing notification or DX tools are actually named.",
+          "passed": true,
+          "evidence": "A dedicated 30KB prior-art audit (research/competitors/2026-08-04-prior-art-audit.md) grades all four uniqueness claims against named prior art and ends with a 'RETRACTIONS - exactly which words are now BANNED, and by what evidence' section plus a 'BANNED CITATIONS' list, propagated into marketing/copy/messaging-library.md ('The banned-claims list'). The headline claim was killed with evidence, not softened: '601,280 SKILL.md files on GitHub' and 'PeonPing/peon-ping - 4,973 stars, same niche, MIT, active - ships five Agent Skills whose config skill description is, near-verbatim, echook's pitch'. Claim 3 is graded 'PARTIALLY REFUTES ... \"Complete\" is dead' against DevinoSolutions/anotifier-for-claude-codex-cursor (CC+Codex+Gemini+Cursor), claudio and agent-tools. Where a residual superlative survives it carries its evidence and its limit inline ('This supports \"still shipping\", NOT \"the maintained one\" - echook's last push 2026-07-19 is older than nine active competitors'). VERDICT.md strikes two of its own claims after red team, including a withdrawn Anthropic quote the red team could not locate. 25+ competing tools are named with URLs across the sweep."
+        },
+        {
+          "text": "Any adoption metrics cited (stars, downloads, installs) are decomposed or explicitly caveated as to composition/meaning, not quoted raw as evidence of demand.",
+          "passed": true,
+          "evidence": "The clone metric is not merely caveated but banned: VERDICT.md - '78 unique cloners against 85 unique viewers is a 92% ratio that no human population produces. It is contaminated by machines to an unknown degree. It cannot be used, and I have banned it from every document.' Stars are decomposed by period against shipping activity ('New stars over the same period: 9 in June, 4 in July. The peak was 19, in April', plus 'A star was also removed during this four-hour engagement - 79 to 78'), and research/README.md logs correction C3 reconciling 9 vs 10 CI checkouts on the clone-spike day and C8 'The one instrument that exists may be measuring machines'. Traffic is reported as a 'de-spiked, de-CI'd baseline' in the product diagnostic. Competitor adoption is likewise decomposed - ccstatusline is cited as '407,682 monthly installs' from api.npmjs.org rather than stars, and the sweep separates the star count from the demand reading ('The category is thriving. echook is not in it')."
+        }
+      ],
+      "notes": [
+        "Nobody has been asked - zero buyers interviewed; every archetype is reasoned, not observed (stated as the largest single weakness in the package).",
+        "No telemetry exists, so no adoption figure is available; the one usage-shaped number (clone traffic) was banned as machine-contaminated.",
+        "Cursor's in-app 'play sound on finish' setting could not be verified - three candidate URLs 404 and llms.txt has no notifications page.",
+        "The recommended maintainer/consulting lane is explicitly unresearched and its price anchor describes agencies, not solo maintainers.",
+        "The owner's own stopping condition was never recorded, so the gate thresholds were set by the analyst and may be the wrong instrument.",
+        "Deliverables use [PAGE]/[SNIPPET] provenance tags in place of a verification harness.",
+        "Where a figure failed re-checking (the '2,016 stars' aggregate) it was struck rather than adjusted."
+      ]
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "eval-0-echook-viability",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.83,
+        "passed": 5,
+        "failed": 1,
+        "total": 6,
+        "time_seconds": 0,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "The deliverable includes an explicit falsification section (e.g. 'What would prove this wrong') listing specific checkable observations that would change the conclusion.",
+          "passed": true,
+          "evidence": "00-VERDICT.md has a section headed 'How to prove me wrong in two weeks, cheaply' specifying a concrete instrument and a numeric threshold: a fake-door 'echook Pro - $5/mo, coming soon' README button, 'Threshold: 30 distinct clicks. Below that, the answer is settled and you close the file', plus a stated falsifiable prediction ('you will get fewer than 10'). 04-evidence-and-method.md closes with 'What would change my verdict:' naming three checkable observations - the fake-door test clearing 30 clicks, 2026 Reddit evidence that the multi-agent cross-editor segment is 10x larger than HN suggests, or Anthropic removing rate_limits / terminalSequence. 02-who-would-pay.md adds 'The one buyer profile that would change my mind' with a specified buyer definition."
+        },
+        {
+          "text": "External market/competitor claims are backed by source URLs (at least 5 distinct URLs appear in the deliverables), rather than unsourced assertions from memory.",
+          "passed": true,
+          "evidence": "Mechanical count: 10 distinct http(s) URLs across 5 hosts, clearing the stated 5-URL bar. The load-bearing platform-substitution finding - the one the verdict turns on - is URL-backed and first-hand: code.claude.com/docs/en/hooks, /statusline, /analytics, /plugin-marketplaces, /skills, with byte counts of the fetched documents and verbatim JSON quoted from lines 267-276. Monetization comparables cite github.blog's $100M-for-open-source post; market context cites anthropic.com (Bun acquisition, Series G), cnbc.com and 2026.stateofai.dev. The run also demonstrates sourcing discipline in the opposite direction: section G 'Numbers deliberately excluded as unreliable' rejects five widely-repeated figures for lack of primary sourcing, and the '71% of hiring managers check GitHub' stat is explicitly flagged as content marketing not to be repeated. NOTE: this is a pass on the assertion as written, not a strong result - the competitor star tables, all HN quotes, and every buyer price anchor (LinearB, Jellyfish, Conductor, Omnara, Pushover-class comparables) carry no URL. See eval_feedback."
+        },
+        {
+          "text": "At least 2 named buyer archetypes are given, each with a concrete sourced price anchor (a real product/tier price, not an invented number).",
+          "passed": true,
+          "evidence": "02-who-would-pay.md defines five named segments (A solo developer, B multi-agent power user, C engineering manager wanting agent observability, D accessibility, E future employer/consulting client) and at least two carry real product/tier prices rather than invented numbers. Segment C: 'LinearB charges $29/contributor/mo (Essentials, 30-seat minimum) and $59 (Enterprise, 50-seat minimum), annual billing only' and 'Jellyfish's AI Impact module runs roughly $35-50/engineer/mo and explicitly tracks Claude Code'. Segment B: 'Conductor ($50/mo), Omnara ($20/mo)'. The seat minimums and billing terms indicate a real tier structure rather than a round guess, and 04-evidence-and-method.md section E repeats them under 'Team observability pricing' alongside DX and Faros ('contact sales'). The prices are not URL-sourced and carry no fetch date, so they cannot be re-verified from the deliverable - flagged in eval_feedback as a weakness of the assertion, not scored against this run."
+        },
+        {
+          "text": "There is an explicit, unhedged verdict classifying the opportunity (e.g. lifestyle/side-project vs venture-shaped, or 'keep it free'), with the conditions under which the verdict would flip \u2014 not 'it depends'.",
+          "passed": true,
+          "evidence": "00-VERDICT.md opens 'The answer you asked for' with: 'No. There is no business in echook as a product, and you should stop investing months in it.' It classifies the alternative explicitly - 'keep it as a finished, frozen portfolio piece and a cross-editor niche tool' - and quantifies the ceiling ('The honest revenue ceiling is $0-50/month'). 03-positioning-and-recommendation.md Part 5 restates it against the user's own three questions without hedging ('Is there a business? No.' / 'Who exactly would pay? Nobody you can currently reach.'). The flip condition is numeric and time-boxed: the 30-click fake-door threshold in 00-VERDICT.md, with recommendation 3 gated on it ('If you ignore this recommendation, ignore it only after the fake-door test clears 30 clicks')."
+        },
+        {
+          "text": "No 'first/only/no one else does this' claim about echook appears without accompanying prior-art evidence; adjacent/competing notification or DX tools are actually named.",
+          "passed": false,
+          "evidence": "The second conjunct is satisfied richly - 04-evidence-and-method.md section C tables ~15 named notification repos and 5 statusline repos with stars, dates and licences (vibe-notch 2,479, Claude-Code-Remote 1,275, Lucarne 324, wyattjoh/claude-code-notification 94, claude-hud 27,066, happy 23,083, ccusage 17,700, ccstatusline 12,203). The first conjunct fails, on the run's own load-bearing claim. 03-positioning-and-recommendation.md states 'What survives the platform's advance - exactly two things: 1. Cross-editor parity ... One notification layer that speaks all three is something no single vendor will ever build', and Part 2 turns that into the recommended README headline ('One notification layer for Claude Code, Cursor, and Codex'). No third-party prior art is checked on that axis anywhere: the ~25 competitors tabulated in section C are recorded with stars, dates and licences but NOT with editor coverage, so the one dimension declared to be echook's surviving moat is the one dimension never audited. The parallel claim is internally contradicted: 02-who-would-pay.md asserts Segment B is 'the only place echook has a genuine, unmet, independently requested capability' and that 'Distinct audio identity per parallel agent is a feature the platform structurally will not ship', while 04-evidence-and-method.md section D4 lists two existing implementations of exactly that - 'cmux-skills - green/yellow/red per workspace tab with sound and optional voice' and 'Voxlert - distinct character voice per Claude Code session'. The same-prompt with_skill run, sweeping the same ecosystem on the same day, found DevinoSolutions/anotifier-for-claude-codex-cursor (18 stars, 'Desktop + phone notifications for CC, Codex, Gemini, Cursor'), ctoth/claudio (CC+Codex audio), peon-ping (21 harnesses) and Cursor's own third-party-hooks compatibility layer, which it summarised as 'Cursor absorbed the cross-editor value prop with a checkbox' - so the unaudited claim is not merely unaudited but wrong in the direction that flatters the subject."
+        },
+        {
+          "text": "Any adoption metrics cited (stars, downloads, installs) are decomposed or explicitly caveated as to composition/meaning, not quoted raw as evidence of demand.",
+          "passed": true,
+          "evidence": "The clone metric is caveated at every appearance: 00-VERDICT.md's traction table reads 'Unique cloners, last 14d | 78 (137 clones) | Inflated by CI/mirrors; real installs are lower', and 04-evidence-and-method.md repeats 'Clones 137 total / 78 unique (inflated by CI, mirrors, and plugin-install git clones)'. Stars are decomposed rather than quoted raw - 'Star accrual, most recent 20 stars: 2026-05-10 -> 2026-08-03, i.e. 20 stars in ~86 days (0.23/day) - statistically identical to the lifetime average of 0.28/day. There was never an inflection point.' The zero-PR/one-issue figure is given two readings, both stated ('either almost nobody uses it, or people use it and it works so uneventfully that they never engage'). The derived user base is explicitly bounded: 'Estimated real user base: a few hundred ... There is no telemetry, so this is inferred from clone/visitor traffic. Do not model it higher.' Section G excludes five unreliable third-party adoption figures by name."
+        }
+      ],
+      "notes": [
+        "Reddit 2026 was inaccessible (host-blocked, jina proxy hit Reddit's 403 wall, PullPush stops mid-2025) - the most recent 12 months of the loudest community is not covered, and the run names this as the single gap most likely to overturn the verdict.",
+        "The accessibility segment is explicitly labelled a hypothesis inferred from the product's shape, not an evidenced demand finding.",
+        "Small-utility-tool price points and conversion rates are under-researched; the run flags it as its weakest section.",
+        "One of four research workstreams was terminated early by a session limit; its critical queries were re-run by the lead but the rest of its output was discarded.",
+        "No primary user research - no echook user was interviewed, and all user counts are order-of-magnitude inferences from GitHub traffic.",
+        "WebSearch budget was exhausted mid-run; most retrieval fell back to WebFetch against search HTML endpoints and direct pages.",
+        "Confidence tiers ([PRIMARY]/[SURVEY]/[ESTIMATE]/[WEAK]) were used in place of per-claim URLs for most figures."
+      ]
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "eval-1-gradient-svg-positioning",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 6,
+        "failed": 0,
+        "total": 6,
+        "time_seconds": 0,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "The 'largest animated README banner collection' superlative is explicitly audited against named competitors (e.g. template/feature counts of capsule-render and others) BEFORE being endorsed or rejected, with a clear verdict.",
+          "passed": true,
+          "evidence": "research/2026-08-04-competitors-and-prior-art.md runs the audit as a numbered procedure - 'Step 1 - Split the claim', 'Step 2 - The counting attack (the most likely kill)', 'Step 3 - Grading the prior art', 'Step 4 - The most defensible version' - against named, URL-sourced competitors (capsule-render 15 types, readme-typing-svg, svg-banners, readme-aura, REHeader, TextGlow, github-profile-header-generator, readme-animated-sweetbanner). strategy/positioning.md then delivers an unambiguous verdict under the struck-through heading '~~\"The largest animated README banner collection\"~~ - retired before it ever shipped', with three numbered reasons: unverifiable by the reader, invites a counting audit that has a real finding waiting in it, and stakes the pitch on the axis the market ignores. The rejection is explicitly NOT on falsity ('Not retired because it is false. Retired because ...'), and README.md restates it: 'Do not claim \"largest\". Not because it's false - it's probably true - but because it's unverifiable by the reader.' The remaining kill path is named as an open gap rather than assumed away: 'Dormant-twin sweep for a >355-template abandoned collection - the one thing that would kill the \"largest\" claim outright'."
+        },
+        {
+          "text": "A narrower, defensible positioning claim is supplied (whether or not the superlative survives), phrased so a hostile commenter cannot refute it in one search.",
+          "passed": true,
+          "evidence": "strategy/positioning.md supplies a full positioning statement (For / is / Unlike / You pay) plus a single-clause moat: '168 distinct animated effects, against capsule-render's 15 types - a catalogue roughly an order of magnitude deeper, in exchange for being the one nobody has heard of.' The number is defensible because it was derived by rendering rather than counting the registry - the run caught its own inflated figure ('~~\"186 distinct effects\"~~ - REFUTED. The real number is 168 ... 18 strings are aliases collapsing into 6 groups - e.g. turbulentWaves == electromagneticWaves == auroraWaves ... render byte-identically'). It is also stated as a trade with the weakness attached ('in exchange for being the one nobody has heard of'), and the run pre-emptively killed the clause a hostile commenter could have refuted with one curl: '~~\"It moves\" - as a category difference~~ - REFUTED', backed by a per-type table of repeatCount=indefinite counts from capsule-render's live API (blur 6, pulse 4, checkered 4, waving 2, venom 1, wave 0). Approved copy is verbatim-locked and the moat is marked 'a lead, not a moat' with the copy window stated."
+        },
+        {
+          "text": "At least 5 named competitors/alternatives in the README-widget ecosystem appear with source URLs.",
+          "passed": true,
+          "evidence": "Mechanical check: 10 named competitors each resolve to at least one source URL in the outputs - capsule-render (api.github.com/repos/kyechan99/capsule-render, capsule-render.vercel.app), readme-typing-svg (api.github.com/repos/DenverCoder1/readme-typing-svg), github-readme-stats (api.github.com/repos/anuraghazra/github-readme-stats), shields (github.com/badges/shields), svg-banners (github.com/Akshay090/svg-banners), readme-aura (api.github.com/repos/collectioneur/readme-aura), REHeader (github.com/khalby786/REHeader), TextGlow (github.com/mrhx01/TextGlow), github-profile-header-generator (api.github.com/repos/leviarista/...), readme-animated-sweetbanner (github.com/sh4den/...). 34 distinct URLs overall. data/competitors.json holds 13 entities with sources, adoption figures and per-entity 'kills-your-moat' verdicts, and the sweep is structured in four rings (direct / adjacent / the substitute that is not a product / platform absorption). Funding state was fetched per competitor too (github.com/sponsors/kyechan99 = 1 sponsor; github.com/sponsors/DenverCoder1 = 4 sponsors)."
+        },
+        {
+          "text": "A red-team/objections/banned-claims artifact exists that anticipates hostile comments (the user explicitly fears a repeat of being 'destroyed in the comments').",
+          "passed": true,
+          "evidence": "Two distinct artifacts. research/red-team/2026-08-04-kill-memo.md (55KB) runs a hostile senior-dev persona against the whole package: '1. I pass because -', '2. The ten questions that would end the meeting', '3. The single load-bearing fact - CHECKED', '5. Required attacks' (5A traction and inevitability leaks, 5B ledger integrity - 20 spot-checks, 5C the moat under its own logic, 5D every stated condition and falsifier, 5E internal consistency, 5F the strongest case the package is WRONG, 5H the live defect nobody in the package found). strategy/positioning.md carries a 12-entry 'Banned claims - permanent, enforced by shape not wording' section plus 'Objection handling', and notably a self-audit of the ban list itself headed 'This list failed its own first audit - read this before trusting it'. The kill memo produced real kills that reached the customer-facing copy: the '186 effects' figure (-> 168), the 'capsule-render is static, this one moves' comparison clause (refuted by live API probe), the '70 of 355 are static' false confession, and the '489x adoption gap' (fused comparison; corrected to ~2,590x like-for-like)."
+        },
+        {
+          "text": "An explicit monetization-vs-portfolio verdict is given that concretely addresses the free-rider embed-traffic cost problem (caps, sponsorship, paid tiers, or a reasoned 'keep it free'), not generic monetization advice.",
+          "passed": true,
+          "evidence": "strategy/monetization-verdict.md answers the free-rider premise directly rather than generically, and corrects it: 'Premise 1: \"MY Vercel account pays for THEIR traffic\" - substantially false' and 'Premise 2: \"other people's READMEs already embed it\" - true, but the number is 9'. The cost exposure is priced against fetched vendor terms - 'Vercel Hobby cannot bill you [PAGE] - vercel.com/docs/plans/hobby', the included allowances, and 'The trap that actually matters' (the 30-day pause rather than a bill). The verdict is explicit: README.md - 'No - and there is nothing to cap. Vercel Hobby pauses, it never bills ... Monetizing would force the Pro plan at $240/year to chase a pool of $0-45/year. The category's donation yield is ~1 sponsor per 1,800 stars, and this project's Sponsors button is already deployed and earning nothing. Keep it as a portfolio piece.' Each monetization shape the user asked about is handled with its own arithmetic (Archetype A developer, B companies wanting branded banners, C sponsorship/donations, each sized bottom-up), and the actionable cost lever is named and ranked ('Fix the cache header (10 minutes) - the only real cost lever', 'Add the free safety valve (30 minutes) - this is the \"cap\" worth having')."
+        },
+        {
+          "text": "The deliverable includes an explicit falsification section (e.g. 'What would prove this wrong').",
+          "passed": true,
+          "evidence": "Every substantive document carries one: strategy/monetization-verdict.md 'What would prove this verdict wrong' (plus 'What this report does NOT say', 'The steelman I could not refute' and 'Open gaps - what I could not verify'), research/2026-08-04-competitors-and-prior-art.md 'What would prove this report wrong', research/2026-08-04-product-diagnostic.md 'What would prove this report wrong', research/red-team/2026-08-04-kill-memo.md 'What would prove THIS memo wrong', and strategy/positioning.md 'What would change this positioning'. README.md adds 'The biggest gaps still open' naming four unchecked items including the highest-value one (whether GitHub is shipping native profile-header customization, 'would collapse the category')."
+        }
+      ],
+      "notes": [
+        "Whether GitHub is shipping native profile-header customization - unchecked, and named as the highest-value open gap because it would collapse the category.",
+        "Whether animated SVG survives GitHub's Camo proxy AS ANIMATED - the product's core premise, inferred from readme-typing-svg's adoption rather than confirmed against a policy page.",
+        "No dormant-twin sweep for an abandoned >355-template collection, which is the one finding that would kill the 'largest' claim outright.",
+        "No freelance/Fiverr price anchor for README design, and no developer sentiment data on whether animated banners read as appealing or noisy.",
+        "Five owner-only actions are listed as blocking, the first of which invalidates the cost analysis if it comes back differently: 'Read the Vercel Usage dashboard (10 min). Every conclusion about traffic and cost rests on numbers nobody has read.'",
+        "The product ships under two names (Gradient SVG Generator vs chromaflow in package.json); the run states no copy can ship until the owner picks one.",
+        "The static/looping template count is disputed between the analyst (11) and the red team (45); both are reported, neither is resolved.",
+        "The 'largest' claim was retired on grounds of unverifiability rather than resolved on the merits, because the dormant-twin sweep was not run.",
+        "Willingness-to-pay rests on category base rates because no direct price evidence was obtainable."
+      ]
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "eval-1-gradient-svg-positioning",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.83,
+        "passed": 5,
+        "failed": 1,
+        "total": 6,
+        "time_seconds": 0,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "The 'largest animated README banner collection' superlative is explicitly audited against named competitors (e.g. template/feature counts of capsule-render and others) BEFORE being endorsed or rejected, with a clear verdict.",
+          "passed": true,
+          "evidence": "02-positioning-copy.md Part 1 is the audit, and it is done against counted competitor internals rather than impressions: capsule-render's 15 type values enumerated from its source tree (10 static in model/normalModel/, 5 animated in model/animationModel/), 69 named colour presets counted by parsing src/gradient.json (31) + src/pallete.json (29) + src/pallete_theme.json (9), 5 text animations, and unbounded custom multi-stop colour via checkCustomColor in src/verification.ts. From that it builds the reachable-space table (15 x 69 = 1,035, x5 animations = 5,175, x reversal x section = 20,700) and reaches a two-part verdict stated up front: 'As phrased: no - it will blow up, and I can show you exactly how. Scoped precisely: yes - but you still shouldn't lead with it.' It also identifies the second-order kill the owner had not asked about - the run's own product count disagrees with itself (340+ / 355 / 359, four duplicate keys named individually) - and recommends pinning 355 with a test."
+        },
+        {
+          "text": "A narrower, defensible positioning claim is supplied (whether or not the superlative survives), phrased so a hostile commenter cannot refute it in one search.",
+          "passed": true,
+          "evidence": "Two are supplied, both checkable. The headline replaces the adjective with the number: '355 animated gradient banners for your GitHub README. One URL, no install.' - with the reasoning stated ('\"Largest\" is a claim a reader must take on trust. \"355\" is a fact they can verify in ten seconds'). The comparative is supplied in attributed form so the hedge does the defensive work: '186 distinct animated effects - more than any other README banner generator I could find (capsule-render, the most widely used, has 15).' The durable positioning is separated from the size claim entirely - Part 4, 'Not \"largest\". \"Curated, not configured.\"' - with an explicit argument for why it cannot be falsified by a 400-template competitor next month. Part 5 adds banned wording and Part 2's ledger grades the unscoped superlative red and the scoped version amber."
+        },
+        {
+          "text": "At least 5 named competitors/alternatives in the README-widget ecosystem appear with source URLs.",
+          "passed": false,
+          "evidence": "Sixteen competitors are named across 01-competitive-landscape.md and 04-evidence-log.md, but only 3 resolve to any URL anywhere in the deliverables. Mechanical check over all five files: capsule-render -> capsule-render.vercel.app (a search string in the embeds table, not a citation), readme-typing-svg -> readme-typing-svg.herokuapp.com / readme-typing-svg.demolab.com (same), shields -> opencollective.com/shields. The other thirteen appear as bare owner/repo strings with star counts and no URL: github-readme-stats, leviarista/github-profile-header-generator, whiteSHADOW1234/TypingSVG, vinimlo/galaxy-profile, collectioneur/readme-aura, sh4den/readme-animated-sweetbanner, mrhx01/TextGlow, asrvd/gitbanner, github-profile-trophy, skill-icons, SVG-Crafter, Waveify, READMEForge. The retrieval method is stated ('Rival sweep (GitHub search API, by stars)', 'gh api search/code -f q=...'), and only 14 distinct URLs appear in the whole run - almost all of them vendor pricing/policy pages for Vercel and Cloudflare rather than competitor sources. The claims are likely accurate; they are simply not traceable from the deliverable, which is what the assertion requires. The same-prompt with_skill run paired 10 named competitors with api.github.com or github.com URLs."
+        },
+        {
+          "text": "A red-team/objections/banned-claims artifact exists that anticipates hostile comments (the user explicitly fears a repeat of being 'destroyed in the comments').",
+          "passed": true,
+          "evidence": "Not a separate file, but a substantive artifact in three parts that does the job. 02-positioning-copy.md Part 2 is a 15-row claims ledger graded green/amber/red with the risk named per row, including three explicit reds - the unscoped superlative ('Falsifiable. capsule-render reaches 20,000+ named combinations'), 'Trusted by developers' ('9 third-party users. This would be the one that blows up') and the live X-Api-Usage: free-unlimited-usage header ('You're on Vercel Hobby - exceeding it is a 30-day hard lockout. You cannot keep this promise'). Part 5 'Wording rules' is a banned-claims list ('Stop saying: largest, best, most popular, trusted by developers, unlimited, production-ready, enterprise-grade, blazing fast'). 01-competitive-landscape.md section 6 'Where you are genuinely vulnerable' anticipates six specific counters. The hostile comment is simulated verbatim rather than gestured at: 'A sceptic doesn't need to work hard here. \"capsule-render does 20,000+ combinations, you have 355\" is a two-minute reply that makes your headline look like it was written without checking. That is the blow-up you were worried about, and it is real.' The Show HN draft is explicitly written to that constraint."
+        },
+        {
+          "text": "An explicit monetization-vs-portfolio verdict is given that concretely addresses the free-rider embed-traffic cost problem (caps, sponsorship, paid tiers, or a reasoned 'keep it free'), not generic monetization advice.",
+          "passed": true,
+          "evidence": "The verdict is explicit and it engages the free-rider premise by measuring it rather than accepting it: 'of 90 files embedding your URL, 73 (81%) are your own repos. Third-party: 17 files, 9 people - one of whom accounts for 9 of the 17. You are overwhelmingly paying for your own traffic.' The cost mechanics are worked from fetched vendor terms - Hobby's 1M edge requests as the binding constraint (not bandwidth, with the 11x arithmetic shown), the overage behaviour quoted verbatim ('you will have to wait until 30 days have passed'), and the finding that governs the whole question: Vercel's Fair Use clause makes 'Asking for Donations ... commercial usage', so 'A \"Buy me a coffee\" button on the current deployment is a terms violation.' Cost-capping is addressed concretely (add s-maxage, ship the category-standard best-effort disclaimer, soften the false free-unlimited-usage header, and migrate /api/svg to Cloudflare Workers if usage grows - modelled at ~$32 vs ~$208+ at 100M requests). Category precedent is priced: shields.io serves >1.6 billion images/month on $1,437/year. Verdict: 'portfolio piece - but a stronger one than you're getting credit for.'"
+        },
+        {
+          "text": "The deliverable includes an explicit falsification section (e.g. 'What would prove this wrong').",
+          "passed": true,
+          "evidence": "03-monetization-verdict.md section 8, 'What would change this verdict', lists four checkable triggers with thresholds: 'Vercel dashboard shows >10% of the edge-request allowance', 'Third-party embeds pass ~1,000 files (currently 17)', 'Someone asks to pay you, unprompted', and direct willingness-to-pay evidence if the blocked Fiverr/Upwork price data can be gathered manually. It is framed as a commitment device - 'Written down so you can check against them later rather than re-litigating'. 00-EXECUTIVE-SUMMARY.md adds 'What I could not verify' (four named gaps, each with its consequence) and 04-evidence-log.md section 8 lists six items with the reason each failed, including one that undercuts the run's own recommendation."
+        }
+      ],
+      "notes": [
+        "Actual Vercel usage was never read - every cost claim is modelled from request volume, and the run repeatedly tells the owner to check the dashboard first because it 'beats every estimate in this document'.",
+        "Willingness-to-pay for README cosmetics could not be gathered - Fiverr and Upwork returned 403/CAPTCHA - so the monetization verdict rests on category base rates instead.",
+        "Camo's exact TTL and eviction policy are undocumented; only that it honours upstream Cache-Control was confirmed.",
+        "GitHub code search totals are approximate and index-capped, so the 2,590x gap is an order of magnitude rather than an exact figure.",
+        "Two live defects the owner must fix in code rather than copy: the X-Api-Usage: free-unlimited-usage header the project cannot honour on Hobby, and the package.json name mismatch (chromaflow).",
+        "The Vercel Fair Use finding - a donation button on the current deployment is a terms violation - is flagged as the single most actionable item and is independent of the monetization decision.",
+        "Competitor figures were gathered via the GitHub search API and stated as owner/repo plus star count rather than as citations, leaving them accurate but not traceable.",
+        "Effect and animation counts were derived from static analysis of the registry and emitted markup rather than from rendered, hashed output."
+      ]
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1.0,
+        "stddev": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 0.0,
+        "stddev": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "tokens": {
+        "mean": 0.0,
+        "stddev": 0.0,
+        "min": 0,
+        "max": 0
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.83,
+        "stddev": 0.0,
+        "min": 0.83,
+        "max": 0.83
+      },
+      "time_seconds": {
+        "mean": 0.0,
+        "stddev": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "tokens": {
+        "mean": 0.0,
+        "stddev": 0.0,
+        "min": 0,
+        "max": 0
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.17",
+      "time_seconds": "n/a",
+      "tokens": "n/a"
+    }
+  },
+  "notes": [
+    "TIMING AND TOKENS ARE INVALID THIS ITERATION and are recorded as 0 everywhere. All four runs were interrupted mid-flight by a session-limit outage and resumed, so wall-clock and token totals measure the outage, not the work. Do not read the time/token rows in this benchmark, and do not compare them to any future iteration.",
+    "Single run per configuration (runs_per_configuration is 1, not 3), so every stddev is 0 by construction and no variance claim can be made. A pass-rate difference of one assertion out of six is within the noise a single run can produce.",
+    "Overall: with_skill 12/12 (100%), without_skill 10/12 (83%), delta +0.17. The skill did not fail anything, but the baseline was unusually strong - this is a weak discrimination signal, not a strong endorsement.",
+    "NON-DISCRIMINATING - 10 of the 12 assertions passed in BOTH configurations. In eval-0: falsification-section-present, external-claims-carry-session-urls, named-buyer-archetypes-with-price-anchors, plain-viability-verdict, adoption-metrics-decomposed-or-caveated. In eval-1: largest-claim-explicitly-audited, defensible-narrower-claim-supplied, hostile-scrutiny-pass-present, monetization-verdict-addresses-freerider-costs, falsification-section-present. These measure competent analyst writing, which the model already does unprompted.",
+    "DISCRIMINATING #1 - eval-0 'no-unaudited-superlative' (with_skill PASS / without_skill FAIL). This is the only assertion that failed on substance rather than form. The baseline recommended a README headline ('One notification layer for Claude Code, Cursor, and Codex') resting on cross-editor uniqueness it never checked: its own competitor table records 25 repos with stars, dates and licences but not editor coverage - the single axis it declared to be the moat. It is also internally contradicted, asserting per-agent audio identity is 'unmet' while its own evidence section lists Voxlert and cmux-skills doing exactly that. The with_skill run, same prompt and date, found DevinoSolutions/anotifier-for-claude-codex-cursor (CC+Codex+Gemini+Cursor), ctoth/claudio, peon-ping and Cursor's native Claude-Code-hook compatibility layer.",
+    "DISCRIMINATING #2 - eval-1 'competitor-table-with-sources' (with_skill PASS / without_skill FAIL). Mechanical: 10 of 10 named competitors carry a resolvable URL with the skill; 3 of 16 without. This one separates on citation hygiene rather than analytical depth - the baseline counted capsule-render's 69 colour presets from its source JSON, which is deeper work than a URL list proves.",
+    "DISCRIMINATING #3 (unmeasured by any assertion, and the largest observed behavioural gap) - self-correction. Both with_skill runs shipped a hostile red-team memo, a patch record, and struck-through retractions inside the customer-facing verdict; neither baseline shipped any self-correction artifact. In eval-1 the red team overturned four claims that were about to ship as public copy: '186 distinct effects' (true value 168, 18 aliases rendering byte-identically), 'capsule-render is static by default' (5 of 6 sampled types loop - refutable by one curl), a false confession that '70 of 355 are static' (all 70 animate), and a fused '489x adoption gap' (like-for-like is ~2,590x). The eval-1 baseline recommends the unverified 186 figure as approved copy in its claims ledger, graded green.",
+    "SURPRISE - the baselines are strong, not weak. Both scored 5/6 and produced work the assertions do not reward: the eval-0 baseline verified Anthropic's native rate_limits/terminalSequence fields first-hand from fetched docs (the finding that reversed its own verdict) and rejected five widely-repeated market figures for lack of primary sourcing; the eval-1 baseline found that Vercel's Fair Use terms classify asking for donations as commercial usage, making a donate button on the current Hobby deployment a terms violation. Any claim that this skill 'adds rigour' has to clear that bar, not a naive baseline.",
+    "PATTERN ACROSS EVALS - the generative difference is measuring the artifact versus reading the manifest. Both eval-1 runs counted 186 effects from the registry; only the skill run rendered all 355 templates, hashed the outputs, found 168 distinct results, and caught 24 non-deterministic templates being served with immutable year-long cache headers. Both eval-0 runs caveated clone counts; only the skill run computed the 78/85 cloner-to-viewer ratio, concluded no human population produces 92%, and banned the metric outright.",
+    "OUTPUT VOLUME differs by roughly 6.5x and is not currently measured or bounded: with_skill produced 424,982 chars across 15 files (eval-0) and 176,810 across 7 files (eval-1); without_skill produced 65,592 across 5 files and 60,516 across 5 files. Whether that depth is worth the read is a judgement no assertion in this set makes.",
+    "EVAL-DESIGN ACTION for iteration 2 - the URL-count floor ('at least 5 distinct URLs') is dead weight: the baseline cleared it with 10 while leaving every competitor star count, HN quote and buyer price anchor unsourced; the skill run produced 113. Similarly 'sourced price anchor' is glossed as 'a real product/tier price, not an invented number', which memory satisfies. Add a URL requirement to both, and add two new assertions covering the unmeasured gaps: (a) the deliverable records at least one claim it retracted, with the evidence that forced it; (b) at least one headline product number is corrected by measuring the artifact rather than its manifest."
+  ]
+}

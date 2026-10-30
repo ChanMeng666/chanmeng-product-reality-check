@@ -1,0 +1,458 @@
+[
+  {
+    "name": "gradient-svg-generator (THE PRODUCT — baseline, not a competitor)",
+    "url": "https://github.com/ChanMeng666/gradient-svg-generator",
+    "category": "baseline",
+    "one_liner": "Free MIT web service serving 359 animated gradient SVG banner templates via a single embeddable URL.",
+    "price": "Free (MIT). FUNDING.yml declares GitHub Sponsors 'ChanMeng666' + Buy Me a Coffee 'chanmeng66u'.",
+    "adoption": "6 stars, 1 fork, 0 open issues (fetched 2026-08-04 via GitHub REST API). Created 2025-01-06.",
+    "last_activity": "2026-07-10 (pushed_at)",
+    "strengths": [
+      "359 templates counted directly from source — genuinely the largest PRESET collection found in this sweep",
+      "Template count is ~24x capsule-render's 15 effect types",
+      "Modern stack (Next.js/TypeScript), has tests, CHANGELOG, CONTRIBUTING, GOVERNANCE, SECURITY docs",
+      "Visual editor + gallery, which the dead competitors (svg-banners, REHeader) lack"
+    ],
+    "positioning_vs_you": "N/A — this is the product being mapped.",
+    "kills_your_moat": {
+      "verdict": false,
+      "why": "N/A"
+    },
+    "threat_level": "n/a",
+    "sources": [
+      {
+        "url": "https://api.github.com/repos/ChanMeng666/gradient-svg-generator",
+        "grade": "PAGE",
+        "what_it_supports": "6 stars, 1 fork, created 2025-01-06, pushed 2026-07-10, MIT, 0 open issues"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ChanMeng666/gradient-svg-generator/main/src/features/*/templates.js",
+        "grade": "PAGE",
+        "what_it_supports": "359 template `name:` entries counted across 19 category files: animation=18, art=35, basic=11, culinaryLiquid=12, emotion=12, fluids=17, gaming=8, githubProfile=41, lightShadow=12, luxury=7, material=12, metallic=8, nature=32, pathText=12, pattern=8, pride=20, shape=12, specialty=50, tech=32"
+      },
+      {
+        "url": "https://api.github.com/repos/ChanMeng666/gradient-svg-generator/contents/.github/FUNDING.yml",
+        "grade": "PAGE",
+        "what_it_supports": "GitHub Sponsors + Buy Me a Coffee declared"
+      }
+    ],
+    "last_verified": "2026-08-04"
+  },
+  {
+    "name": "capsule-render",
+    "url": "https://github.com/kyechan99/capsule-render",
+    "category": "direct",
+    "one_liner": "The category incumbent: URL-parameterized SVG header/footer generator for GitHub READMEs, 15 shape/animation effect types with arbitrary colors, gradients and text.",
+    "price": "Free (MIT). GitHub Sponsors enabled for kyechan99 — custom amount only, no preset tiers.",
+    "adoption": "1,790 stars, 731 forks, 11 open issues (fetched 2026-08-04 via GitHub REST API). Created 2020-07-17. GitHub Sponsors: exactly 1 sponsor.",
+    "last_activity": "2026-07-25 (pushed_at) — ACTIVELY MAINTAINED, 3 issues closed in June 2026",
+    "strengths": [
+      "298x the stars of the product (1,790 vs 6) — it IS the default answer devs already reach for",
+      "731 forks means a large self-hosted long tail immune to the maintainer's own infra failing",
+      "Actively maintained in 2026 — issues closed 2026-06-08 and 2026-06-12, pushed 2026-07-25",
+      "README translated into 11 languages (de/es/fr/jp/kr/ml/pt-br/ru/zh-cn/zh-hk/zh-tw) — real international distribution",
+      "Its 15 types are COMPOSABLE primitives (any color/gradient/text/animation), so its effective output space is unbounded — arguably larger expressive range than 359 fixed presets",
+      "Has a test suite (jest, snapshot tests), commitlint, husky — mature engineering hygiene",
+      "Honest about its own limits: README tells users to fork and self-host for production"
+    ],
+    "positioning_vs_you": "As a user: with capsule-render you pick a shape and hand-tune colors, so you get something nobody else has but you have to make design decisions. With the product you scroll a gallery and pick a finished look. The product wins on 'I want it to look good and I don't want to think'; capsule-render wins on 'I want MY colors' and on the social proof of being the tool everyone already uses.",
+    "kills_your_moat": {
+      "verdict": false,
+      "why": "On a literal count of named presets, 359 > 15, so 'largest animated README banner collection' survives — but only under a narrow reading. capsule-render's 15 types are parameterized primitives, not presets: any color/gradient/text combination is reachable, so its reachable output space is effectively infinite. The claim is true as stated and misleading as heard. A skeptic who reads 'largest collection' as 'most things you can make' will find the claim false."
+    },
+    "threat_level": "high",
+    "sources": [
+      {
+        "url": "https://api.github.com/repos/kyechan99/capsule-render",
+        "grade": "PAGE",
+        "what_it_supports": "1,790 stars, 731 forks, pushed 2026-07-25, MIT, 11 open issues, created 2020-07-17, homepage capsule-render.vercel.app"
+      },
+      {
+        "url": "https://github.com/kyechan99/capsule-render",
+        "grade": "PAGE",
+        "what_it_supports": "15 effect types (wave, egg, shark, slice, rect, soft, rounded, cylinder, waving, venom, speech, blur, pulse, checkered, transparent); hosted on Vercel; README notice that service 'may be unstable due to usage limits or traffic spikes' and advises forking to own Vercel"
+      },
+      {
+        "url": "https://api.github.com/repos/kyechan99/capsule-render/git/trees/main?recursive=1",
+        "grade": "PAGE",
+        "what_it_supports": "15 sample SVGs in docs/samples confirming the 15-type count; animationModel/ and normalModel/ source dirs; 11 translated READMEs"
+      },
+      {
+        "url": "https://github.com/sponsors/kyechan99",
+        "grade": "PAGE",
+        "what_it_supports": "'1 sponsor has funded kyechan99's work.' Custom amount only."
+      },
+      {
+        "url": "https://github.com/kyechan99/capsule-render/issues",
+        "grade": "PAGE",
+        "what_it_supports": "Hosting-fragility history: #107 'Deployment Paused' (closed 2026-02-03), #20 'Vercel link is down' (closed 2023-08-16), #22 '500: INTERNAL_SERVER_ERROR' (closed 2023-12-31), #128 vercel credentials bug (closed 2026-06-08)"
+      }
+    ],
+    "last_verified": "2026-08-04"
+  },
+  {
+    "name": "readme-typing-svg",
+    "url": "https://github.com/DenverCoder1/readme-typing-svg",
+    "category": "direct",
+    "one_liner": "Animated typing-effect SVG text for READMEs, embedded as a single URL — the most-adopted animated-SVG README tool found.",
+    "price": "Free (MIT). GitHub Sponsors tiers $1/$3/$5/$10/$20/$25/$35/$100 per month, plus Ko-fi (jlawrence).",
+    "adoption": "9,169 stars, 1,594 forks, 68 open issues (fetched 2026-08-04 via GitHub REST API). Created 2021-04-20. GitHub Sponsors: 4 current sponsors against a stated goal of 10.",
+    "last_activity": "2026-07-19 (pushed_at) — actively maintained",
+    "strengths": [
+      "1,528x the stars of the product (9,169 vs 6) — the single most-adopted animated README SVG tool in the sweep",
+      "1,594 forks = enormous self-hosted tail",
+      "Has a real support community (Discord server) — no other player in this category does",
+      "Most complete monetization attempt in the category (8 sponsor tiers + Ko-fi + YouTube), so it is the best available evidence on what this category can earn",
+      "Deploy-to-Heroku button plus demolab.com demo — deliberate multi-host strategy reduces single-point-of-failure risk"
+    ],
+    "positioning_vs_you": "Not a substitute in a strict sense — it animates TEXT typing, the product animates a gradient BACKGROUND. But as a user experiences it, both fill the same slot: the animated strip at the top of my README. Most devs pick one, not both. It is a competitor for the slot, not for the feature.",
+    "kills_your_moat": {
+      "verdict": false,
+      "why": "Different effect class (typing text vs gradient background) and it does not ship a large preset library, so it does not refute a 'largest collection' claim. It does, however, refute any claim that this is an underserved niche — 9,169 stars says the niche is well served and already has a winner."
+    },
+    "threat_level": "med",
+    "sources": [
+      {
+        "url": "https://api.github.com/repos/DenverCoder1/readme-typing-svg",
+        "grade": "PAGE",
+        "what_it_supports": "9,169 stars, 1,594 forks, pushed 2026-07-19, MIT, 68 open issues, created 2021-04-20"
+      },
+      {
+        "url": "https://github.com/sponsors/DenverCoder1",
+        "grade": "PAGE",
+        "what_it_supports": "'Current sponsors 4', 40% toward a 10-monthly-sponsor goal; tiers $1 through $100/month"
+      },
+      {
+        "url": "https://api.github.com/repos/DenverCoder1/readme-typing-svg/contents/.github/FUNDING.yml",
+        "grade": "PAGE",
+        "what_it_supports": "github: [DenverCoder1], ko_fi: jlawrence"
+      },
+      {
+        "url": "https://github.com/DenverCoder1/readme-typing-svg",
+        "grade": "PAGE",
+        "what_it_supports": "Heroku deploy button, demolab.com demo host, Discord community, Google Fonts / color / animation parameters"
+      }
+    ],
+    "last_verified": "2026-08-04"
+  },
+  {
+    "name": "github-profile-header-generator (leviarista)",
+    "url": "https://github.com/leviarista/github-profile-header-generator",
+    "category": "direct",
+    "one_liner": "Browser-side generator that produces a header IMAGE you download and commit — no runtime dependency on anyone's server.",
+    "price": "Free (MIT). No FUNDING.yml — this maintainer does not even ask for money.",
+    "adoption": "1,316 stars, 92 forks (fetched 2026-08-04 via GitHub REST API).",
+    "last_activity": "2026-06-08 (pushed_at) — maintained",
+    "strengths": [
+      "219x the product's stars (1,316 vs 6)",
+      "ARCHITECTURALLY IMMUNE to the failure mode that threatens every URL-embed tool: you download a file and commit it, so no maintainer's Vercel bill or downtime can ever break your README",
+      "Hosted on GitHub Pages (github.io), which is free and effectively never goes down — no per-request cost at all",
+      "No ongoing hosting cost means no reason for the maintainer to ever abandon it"
+    ],
+    "positioning_vs_you": "As a user: this one makes you do a download-and-commit step once, and then your banner is permanently yours and never breaks. The product gives you a one-line paste and a banner that is alive but depends forever on the maintainer's Vercel account staying up and paid. Static beats dynamic for anyone who has ever had a README image break.",
+    "kills_your_moat": {
+      "verdict": false,
+      "why": "It generates custom headers rather than shipping a preset library, so it does not out-count the product. But it does undercut the durability argument: it delivers the same visual outcome with zero platform risk."
+    },
+    "threat_level": "med",
+    "sources": [
+      {
+        "url": "https://api.github.com/repos/leviarista/github-profile-header-generator",
+        "grade": "PAGE",
+        "what_it_supports": "1,316 stars, 92 forks, pushed 2026-06-08, MIT, homepage leviarista.github.io"
+      },
+      {
+        "url": "https://api.github.com/repos/leviarista/github-profile-header-generator/contents/.github/FUNDING.yml",
+        "grade": "PAGE",
+        "what_it_supports": "404 — no FUNDING.yml, no monetization attempt"
+      }
+    ],
+    "last_verified": "2026-08-04"
+  },
+  {
+    "name": "svg-banners (Akshay090)",
+    "url": "https://github.com/Akshay090/svg-banners",
+    "category": "direct",
+    "one_liner": "Styled HTML/CSS-in-SVG banners for READMEs — an early entrant, now abandoned.",
+    "price": "Free, no license file declared.",
+    "adoption": "406 stars, 53 forks (fetched 2026-08-04 via GitHub REST API).",
+    "last_activity": "2020-10-13 (pushed_at) — DEAD for ~5 years 10 months",
+    "strengths": [
+      "Still holds 406 stars, 68x the product's, purely on residual SEO and inbound links from old README copy-paste — evidence that in this category stars accrue to whoever was early, not whoever is best",
+      "Its banners still render today because SVG is static — abandonment did not break users"
+    ],
+    "positioning_vs_you": "Effectively no live competition. Its value to this analysis is as a mortality datapoint: a 406-star tool in this exact niche died and nobody replaced it, which suggests low ongoing user demand for maintenance.",
+    "kills_your_moat": {
+      "verdict": false,
+      "why": "Abandoned since 2020 and never shipped a large preset library."
+    },
+    "threat_level": "low",
+    "sources": [
+      {
+        "url": "https://api.github.com/repos/Akshay090/svg-banners",
+        "grade": "PAGE",
+        "what_it_supports": "406 stars, 53 forks, pushed 2020-10-13, no license"
+      }
+    ],
+    "last_verified": "2026-08-04"
+  },
+  {
+    "name": "REHeader (khalby786)",
+    "url": "https://github.com/khalby786/REHeader",
+    "category": "direct",
+    "one_liner": "Header image generator for GitHub profile READMEs — abandoned.",
+    "price": "Free (MIT).",
+    "adoption": "236 stars, 15 forks (fetched 2026-08-04 via GitHub REST API).",
+    "last_activity": "2020-10-10 (pushed_at) — DEAD for ~5 years 10 months",
+    "strengths": [
+      "39x the product's stars despite being dead for nearly six years"
+    ],
+    "positioning_vs_you": "No live competition. Second mortality datapoint in the same niche and the same month of death as svg-banners.",
+    "kills_your_moat": {
+      "verdict": false,
+      "why": "Abandoned, no preset library."
+    },
+    "threat_level": "low",
+    "sources": [
+      {
+        "url": "https://api.github.com/repos/khalby786/REHeader",
+        "grade": "PAGE",
+        "what_it_supports": "236 stars, 15 forks, pushed 2020-10-10, MIT"
+      }
+    ],
+    "last_verified": "2026-08-04"
+  },
+  {
+    "name": "readme-animated-sweetbanner (sh4den)",
+    "url": "https://github.com/sh4den/readme-animated-sweetbanner",
+    "category": "direct",
+    "one_liner": "New (2026) tool for aesthetic animated SVG banners for GitHub profiles — a direct, current-generation twin.",
+    "price": "Free (MIT).",
+    "adoption": "63 stars, 6 forks (fetched 2026-08-04 via GitHub REST API).",
+    "last_activity": "2026-07-06 (pushed_at) — active",
+    "strengths": [
+      "10x the product's stars (63 vs 6) despite being newer to visibility",
+      "Hosted on github.io — zero hosting cost, no Vercel dependency",
+      "Proves the niche still attracts fresh entrants in 2026, i.e. barriers to entry are near zero"
+    ],
+    "positioning_vs_you": "Near-identical user promise (animated SVG banner for your profile). A user choosing between them is choosing on gallery taste alone — there is no functional lock-in on either side.",
+    "kills_your_moat": {
+      "verdict": false,
+      "why": "Smaller template library, but its existence plus TextGlow shows the 'largest collection' lead is defensible only by continuing to out-produce free entrants who can clone the approach in a weekend."
+    },
+    "threat_level": "med",
+    "sources": [
+      {
+        "url": "https://api.github.com/repos/sh4den/readme-animated-sweetbanner",
+        "grade": "PAGE",
+        "what_it_supports": "63 stars, 6 forks, pushed 2026-07-06, MIT, homepage sweetbanner.github.io"
+      }
+    ],
+    "last_verified": "2026-08-04"
+  },
+  {
+    "name": "TextGlow (mrhx01)",
+    "url": "https://github.com/mrhx01/TextGlow",
+    "category": "direct",
+    "one_liner": "Generate animated SVG banners for GitHub READMEs, 'no uploads' — the closest new twin by description.",
+    "price": "Free (MIT).",
+    "adoption": "24 stars, 2 forks (fetched 2026-08-04 via GitHub REST API).",
+    "last_activity": "2026-06-11 (pushed_at) — active",
+    "strengths": [
+      "4x the product's stars (24 vs 6) with a June 2026 launch",
+      "Positions on 'no uploads' — a privacy/simplicity angle the product does not claim"
+    ],
+    "positioning_vs_you": "Functionally the same pitch with a smaller library. Matters as trajectory evidence, not as current threat.",
+    "kills_your_moat": {
+      "verdict": false,
+      "why": "Far smaller library today."
+    },
+    "threat_level": "low",
+    "sources": [
+      {
+        "url": "https://api.github.com/repos/mrhx01/TextGlow",
+        "grade": "PAGE",
+        "what_it_supports": "24 stars, 2 forks, pushed 2026-06-11, MIT, homepage itextglow.vercel.app"
+      }
+    ],
+    "last_verified": "2026-08-04"
+  },
+  {
+    "name": "readme-aura (collectioneur)",
+    "url": "https://github.com/collectioneur/readme-aura",
+    "category": "direct",
+    "one_liner": "Render React/JSX components as animated SVGs directly inside GitHub READMEs — a generalization that subsumes banner generation.",
+    "price": "Free (MIT), distributed via npm.",
+    "adoption": "138 stars, 9 forks (fetched 2026-08-04 via GitHub REST API).",
+    "last_activity": "2026-08-03 (pushed_at) — extremely active, pushed yesterday",
+    "strengths": [
+      "23x the product's stars and rising fast on a repo that is being pushed to daily",
+      "STRATEGICALLY THE MOST DANGEROUS ENTRY IN THE SWEEP: if you can render arbitrary JSX to animated SVG, a banner is just one component — a 359-template library becomes an npm package someone publishes on top of it",
+      "npm distribution rather than a hosted URL, so it has no hosting cost and no outage surface",
+      "Generalizes the category instead of competing inside it"
+    ],
+    "positioning_vs_you": "As a user: the product gives you a finished banner from a menu; readme-aura gives you the ability to build any animated README graphic you can code, banner included. It converts 'pick from my gallery' into 'write your own', which is how preset libraries historically get commoditized.",
+    "kills_your_moat": {
+      "verdict": true,
+      "why": "Not on count — it ships no competing preset library. But it dissolves the terms of the claim: if arbitrary JSX renders to animated README SVG, 'largest collection of templates' stops being a moat because templates become trivially user-authorable and forkable. A moat measured in preset count does not survive a general-purpose renderer gaining traction."
+    },
+    "threat_level": "high",
+    "sources": [
+      {
+        "url": "https://api.github.com/repos/collectioneur/readme-aura",
+        "grade": "PAGE",
+        "what_it_supports": "138 stars, 9 forks, pushed 2026-08-03, MIT, npm-distributed"
+      }
+    ],
+    "last_verified": "2026-08-04"
+  },
+  {
+    "name": "github-readme-stats (anuraghazra)",
+    "url": "https://github.com/anuraghazra/github-readme-stats",
+    "category": "adjacent",
+    "one_liner": "Dynamically generated GitHub stats cards embedded in READMEs by URL — the giant of the embed-a-URL-in-your-README category.",
+    "price": "Free (MIT). FUNDING.yml lists GitHub Sponsors, PayPal.me and Buy Me a Coffee for anuraghazra.",
+    "adoption": "79,825 stars, 36,149 forks (fetched 2026-08-04 via GitHub REST API).",
+    "last_activity": "2026-07-31 (pushed_at) — very active",
+    "strengths": [
+      "13,304x the product's stars (79,825 vs 6) — the definitive proof that the 'embed a dynamic SVG in your README' behavior is mainstream and enormous",
+      "36,149 forks is one of the largest self-host tails on GitHub, driven precisely by rate-limit pain on the shared instance",
+      "Occupies the same visual real estate (the strip below your README heading) and the same user attention budget",
+      "Triple monetization surface (Sponsors + PayPal + BMC) and still, by category norms, does not appear to be a business"
+    ],
+    "positioning_vs_you": "As a user: most READMEs have room for one or two decorative embeds. Stats cards win that slot more often because they convey information about the developer, not just decoration. The product competes for the same scarce line of README real estate against something far better known.",
+    "kills_your_moat": {
+      "verdict": false,
+      "why": "Different content type (stats vs gradient banner); does not refute a template-count claim. It is included because it sets the realistic ceiling: even 79,825 stars in this category has not produced a paid product."
+    },
+    "threat_level": "med",
+    "sources": [
+      {
+        "url": "https://api.github.com/repos/anuraghazra/github-readme-stats",
+        "grade": "PAGE",
+        "what_it_supports": "79,825 stars, 36,149 forks, pushed 2026-07-31, MIT"
+      },
+      {
+        "url": "https://api.github.com/repos/anuraghazra/github-readme-stats/contents/.github/FUNDING.yml",
+        "grade": "PAGE",
+        "what_it_supports": "github: [anuraghazra], custom: paypal.me/anuraghazra + buymeacoffee.com/anuraghazra"
+      }
+    ],
+    "last_verified": "2026-08-04"
+  },
+  {
+    "name": "Shields.io",
+    "url": "https://github.com/badges/shields",
+    "category": "adjacent",
+    "one_liner": "The universal README badge service — concise, consistent metadata badges as embeddable SVG.",
+    "price": "Free (Apache-2.0). Runs on donated infrastructure; a paid tier was NOT verified this session.",
+    "adoption": "27,011 stars, 5,613 forks (fetched 2026-08-04 via GitHub REST API).",
+    "last_activity": "2026-08-03 (pushed_at) — pushed yesterday, extremely active",
+    "strengths": [
+      "4,502x the product's stars and the most-embedded SVG service in the developer world",
+      "Solved the exact hard problem the product has not had to face yet: serving README-embedded SVG at internet scale, sustainably, for a decade",
+      "Apache-2.0 with real institutional governance rather than a solo maintainer — no bus factor of one",
+      "Could technically add decorative headers; has deliberately stayed narrow, which is itself a strategic lesson"
+    ],
+    "positioning_vs_you": "Not a substitute — badges are informational, banners decorative, and most READMEs use both. Included as the benchmark for what surviving at scale in free README-embed infrastructure actually requires.",
+    "kills_your_moat": {
+      "verdict": false,
+      "why": "Different job entirely. Relevant only as a scale-and-sustainability precedent."
+    },
+    "threat_level": "low",
+    "sources": [
+      {
+        "url": "https://api.github.com/repos/badges/shields",
+        "grade": "PAGE",
+        "what_it_supports": "27,011 stars, 5,613 forks, pushed 2026-08-03, Apache-2.0, homepage shields.io"
+      }
+    ],
+    "last_verified": "2026-08-04"
+  },
+  {
+    "name": "GitHub / Camo image proxy (PLATFORM)",
+    "url": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-anonymized-urls",
+    "category": "platform",
+    "one_liner": "GitHub proxies every README image through its Camo image proxy, which sits between the product's server and every reader.",
+    "price": "N/A (platform).",
+    "adoption": "Universal — every image in every GitHub README passes through it.",
+    "last_activity": "Live platform behavior, docs fetched 2026-08-04.",
+    "strengths": [
+      "GitHub controls content-type support, caching and sanitization for every README image, unilaterally and without notice",
+      "Camo caching is governed by Cache-Control headers — GitHub docs explicitly tell publishers to return 'no-cache' if images must update, meaning stale/frozen renders are a known, documented failure mode for dynamic image services",
+      "Camo maintains an allowlist of supported content types; GitHub docs acknowledge unsupported content types are simply not proxied"
+    ],
+    "positioning_vs_you": "As a user, nothing about the product is under its own control at the moment of viewing: the banner your reader sees is fetched, cached and sanitized by GitHub. A single GitHub policy change on SVG handling or caching would alter or break every banner in every README simultaneously, with no recourse.",
+    "kills_your_moat": {
+      "verdict": false,
+      "why": "Does not refute the template-count claim, but it caps the value of the entire category: the product owns neither distribution nor rendering. This is a concentration risk, not a competitor."
+    },
+    "threat_level": "high",
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-anonymized-urls",
+        "grade": "PAGE",
+        "what_it_supports": "'To host your images, GitHub uses the open-source project Camo.' Cache-Control/no-cache guidance for images that must update; acknowledgement that unsupported content types are not proxied"
+      }
+    ],
+    "last_verified": "2026-08-04"
+  },
+  {
+    "name": "Self-hosting / forking (THE REAL SUBSTITUTE)",
+    "url": "https://github.com/kyechan99/capsule-render",
+    "category": "substitute",
+    "one_liner": "Fork any of these MIT tools and deploy to your own free Vercel/GitHub Pages account — the incumbent literally instructs users to do this.",
+    "price": "$0 — Vercel and GitHub Pages free tiers cover README-banner traffic.",
+    "adoption": "capsule-render 731 forks + readme-typing-svg 1,594 forks + github-readme-stats 36,149 forks = 38,474 forks of directly comparable tools (fetched 2026-08-04).",
+    "last_activity": "Continuous.",
+    "strengths": [
+      "Free forever, no rate limits, no dependency on any maintainer",
+      "MIT licensing means the product's own 359 templates can be forked wholesale by anyone, including a competitor — the library is copyable, so it is not a defensible asset",
+      "capsule-render's README actively RECOMMENDS this path for production use, so the incumbent is training users away from hosted dependence"
+    ],
+    "positioning_vs_you": "As a user: ten minutes of setup buys permanent independence. Anyone burned once by a broken README image takes this path and never returns to a hosted generator.",
+    "kills_your_moat": {
+      "verdict": true,
+      "why": "The template library is MIT-licensed content, not a service advantage. Anyone can fork all 359 templates and self-host them, so 'largest collection' is a lead measured in someone else's copy time, not a moat. Nothing prevents a competitor from ingesting the whole library legally."
+    },
+    "threat_level": "high",
+    "sources": [
+      {
+        "url": "https://github.com/kyechan99/capsule-render",
+        "grade": "PAGE",
+        "what_it_supports": "README advises forking and deploying to own Vercel for reliable production use; service 'may be unstable due to usage limits or traffic spikes'"
+      },
+      {
+        "url": "https://api.github.com/repos/anuraghazra/github-readme-stats",
+        "grade": "PAGE",
+        "what_it_supports": "36,149 forks — the scale of the self-host substitute in this category"
+      }
+    ],
+    "last_verified": "2026-08-04"
+  },
+  {
+    "_coverage_note": {
+      "type": "coverage_and_gaps",
+      "verified_this_session": [
+        "All GitHub star/fork/push/license/issue counts above — fetched via authenticated GitHub REST API on 2026-08-04, primary source, quotable",
+        "Product template count of 359 — counted directly from 19 raw source files on raw.githubusercontent.com",
+        "capsule-render 15 effect types — cross-checked against README list AND 15 sample SVGs in docs/samples/",
+        "GitHub Sponsors counts for kyechan99 (1 sponsor) and DenverCoder1 (4 sponsors) — read off the live sponsor pages",
+        "FUNDING.yml contents for 5 repos — fetched via API",
+        "capsule-render outage/hosting issue history — fetched via GitHub issue search",
+        "GitHub Camo proxy behavior — fetched from docs.github.com"
+      ],
+      "could_NOT_verify": [
+        "FIVERR / FREELANCE PRICING — NOT VERIFIED. The single most requested number in the brief is missing. A subagent loaded Fiverr in a real browser but was cut off by a session limit before reading USD prices (it reported prices rendering in NZD). No dollar figure for 'GitHub profile README design' is claimed anywhere in this file. Treat the freelance-substitute price as UNKNOWN.",
+        "CANVA / FIGMA PRICING — NOT VERIFIED. No pricing page was fetched. The DIY-a-PNG cost is unquantified.",
+        "GITHUB ROADMAP FOR PROFILE HEADER CUSTOMIZATION — NOT VERIFIED. github.blog/changelog and github/roadmap were not successfully searched before the session's web-search budget was exhausted (200/200 used). Whether GitHub plans native profile-header customization is genuinely OPEN. This is a material gap: native support would remove the category's reason to exist.",
+        "WHETHER CAMO PASSES SMIL/CSS SVG ANIMATION — NOT VERIFIED. GitHub docs confirm Camo proxying and caching but the session did not confirm that animated SVG survives the proxy, nor find any changelog history of GitHub breaking these tools. Since the entire product depends on animation surviving Camo, this is the highest-value unverified item in the sweep.",
+        "ACTUAL USAGE/TRAFFIC of the product — NOT VERIFIED. Stars (6) are a proxy for attention, not embeds. No traffic, request-volume or Vercel analytics data was obtained. 'How many READMEs actually embed it' remains unknown; 6 stars / 1 fork makes a low number plausible but this is inference, not evidence.",
+        "DEVELOPER SENTIMENT / BACKLASH toward animated README banners — NOT VERIFIED. No Reddit or HN thread was fetched. Whether devs find these banners appealing or noisy is unmeasured.",
+        "capsule-render MAINTAINER HOSTING COSTS — NOT VERIFIED. Issues show outages (#107 'Deployment Paused', #20 'Vercel link is down') and the README warns of usage limits, but no issue or statement quantifying a dollar hosting cost was found.",
+        "npm DOWNLOAD COUNTS for readme-aura or any npm-distributed competitor — NOT FETCHED."
+      ],
+      "category_monetization_finding": "NOBODY IN THIS CATEGORY CHARGES MONEY — verified. Every player checked is free and permissively licensed (MIT, except shields.io Apache-2.0). No paid tier, no commercial license, no hosted-plan upsell was found on any of them. Donation is the only monetization mechanism present, and its measured yield is near zero: capsule-render at 1,790 stars has 1 sponsor; readme-typing-svg at 9,169 stars has 4 sponsors against a goal of 10, with tiers starting at $1/month. github-readme-stats at 79,825 stars runs three donation surfaces (Sponsors, PayPal, Buy Me a Coffee) and is still a donation project. leviarista's 1,316-star generator has no FUNDING.yml at all. The category's revenue ceiling, as evidenced, is a few dollars per month at 10,000-star scale."
+    }
+  }
+]

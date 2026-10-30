@@ -1,4 +1,4 @@
-# product-reality-check
+# chanmeng-product-reality-check
 
 A Claude agent skill for the developer who built something good and has no users.
 
@@ -39,20 +39,20 @@ Concretely, it forces five things that hand-waved validation skips:
 
 ## Install
 
-Copy the inner `product-reality-check/` directory into your skills folder:
+Copy the inner `chanmeng-product-reality-check/` directory into your skills folder:
 
 ```bash
-git clone https://github.com/ChanMeng666/product-reality-check
-cd product-reality-check
+git clone https://github.com/ChanMeng666/chanmeng-product-reality-check
+cd chanmeng-product-reality-check
 
 # Personal — available in every project
-cp -r product-reality-check ~/.claude/skills/
+cp -r chanmeng-product-reality-check ~/.claude/skills/
 
 # Or per-project — checked into the repo, shared with the team
-mkdir -p .claude/skills && cp -r product-reality-check .claude/skills/
+mkdir -p .claude/skills && cp -r chanmeng-product-reality-check .claude/skills/
 ```
 
-The path that matters is `~/.claude/skills/product-reality-check/SKILL.md` — the inner
+The path that matters is `~/.claude/skills/chanmeng-product-reality-check/SKILL.md` — the inner
 directory, not this repository's root.
 
 Then just describe the problem. It triggers on the real questions people ask — "who would pay
@@ -83,7 +83,7 @@ runs as a separate agent that has seen only the finished deliverables, never you
 ### What is in this repo
 
 ```
-product-reality-check/
+chanmeng-product-reality-check/
 ├─ SKILL.md                    the workflow: posture, three rules, six phases, failure modes
 ├─ references/
 │  ├─ workspace-conventions.md directory layout, living vs append-only, decision records, staleness

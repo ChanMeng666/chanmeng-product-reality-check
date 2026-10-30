@@ -1,0 +1,101 @@
+{
+  "eval_name": "eval-1-gradient-svg-positioning",
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "The 'largest animated README banner collection' superlative is explicitly audited against named competitors (e.g. template/feature counts of capsule-render and others) BEFORE being endorsed or rejected, with a clear verdict.",
+      "passed": true,
+      "evidence": "research/2026-08-04-competitors-and-prior-art.md runs the audit as a numbered procedure - 'Step 1 - Split the claim', 'Step 2 - The counting attack (the most likely kill)', 'Step 3 - Grading the prior art', 'Step 4 - The most defensible version' - against named, URL-sourced competitors (capsule-render 15 types, readme-typing-svg, svg-banners, readme-aura, REHeader, TextGlow, github-profile-header-generator, readme-animated-sweetbanner). strategy/positioning.md then delivers an unambiguous verdict under the struck-through heading '~~\"The largest animated README banner collection\"~~ - retired before it ever shipped', with three numbered reasons: unverifiable by the reader, invites a counting audit that has a real finding waiting in it, and stakes the pitch on the axis the market ignores. The rejection is explicitly NOT on falsity ('Not retired because it is false. Retired because ...'), and README.md restates it: 'Do not claim \"largest\". Not because it's false - it's probably true - but because it's unverifiable by the reader.' The remaining kill path is named as an open gap rather than assumed away: 'Dormant-twin sweep for a >355-template abandoned collection - the one thing that would kill the \"largest\" claim outright'."
+    },
+    {
+      "text": "A narrower, defensible positioning claim is supplied (whether or not the superlative survives), phrased so a hostile commenter cannot refute it in one search.",
+      "passed": true,
+      "evidence": "strategy/positioning.md supplies a full positioning statement (For / is / Unlike / You pay) plus a single-clause moat: '168 distinct animated effects, against capsule-render's 15 types - a catalogue roughly an order of magnitude deeper, in exchange for being the one nobody has heard of.' The number is defensible because it was derived by rendering rather than counting the registry - the run caught its own inflated figure ('~~\"186 distinct effects\"~~ - REFUTED. The real number is 168 ... 18 strings are aliases collapsing into 6 groups - e.g. turbulentWaves == electromagneticWaves == auroraWaves ... render byte-identically'). It is also stated as a trade with the weakness attached ('in exchange for being the one nobody has heard of'), and the run pre-emptively killed the clause a hostile commenter could have refuted with one curl: '~~\"It moves\" - as a category difference~~ - REFUTED', backed by a per-type table of repeatCount=indefinite counts from capsule-render's live API (blur 6, pulse 4, checkered 4, waving 2, venom 1, wave 0). Approved copy is verbatim-locked and the moat is marked 'a lead, not a moat' with the copy window stated."
+    },
+    {
+      "text": "At least 5 named competitors/alternatives in the README-widget ecosystem appear with source URLs.",
+      "passed": true,
+      "evidence": "Mechanical check: 10 named competitors each resolve to at least one source URL in the outputs - capsule-render (api.github.com/repos/kyechan99/capsule-render, capsule-render.vercel.app), readme-typing-svg (api.github.com/repos/DenverCoder1/readme-typing-svg), github-readme-stats (api.github.com/repos/anuraghazra/github-readme-stats), shields (github.com/badges/shields), svg-banners (github.com/Akshay090/svg-banners), readme-aura (api.github.com/repos/collectioneur/readme-aura), REHeader (github.com/khalby786/REHeader), TextGlow (github.com/mrhx01/TextGlow), github-profile-header-generator (api.github.com/repos/leviarista/...), readme-animated-sweetbanner (github.com/sh4den/...). 34 distinct URLs overall. data/competitors.json holds 13 entities with sources, adoption figures and per-entity 'kills-your-moat' verdicts, and the sweep is structured in four rings (direct / adjacent / the substitute that is not a product / platform absorption). Funding state was fetched per competitor too (github.com/sponsors/kyechan99 = 1 sponsor; github.com/sponsors/DenverCoder1 = 4 sponsors)."
+    },
+    {
+      "text": "A red-team/objections/banned-claims artifact exists that anticipates hostile comments (the user explicitly fears a repeat of being 'destroyed in the comments').",
+      "passed": true,
+      "evidence": "Two distinct artifacts. research/red-team/2026-08-04-kill-memo.md (55KB) runs a hostile senior-dev persona against the whole package: '1. I pass because -', '2. The ten questions that would end the meeting', '3. The single load-bearing fact - CHECKED', '5. Required attacks' (5A traction and inevitability leaks, 5B ledger integrity - 20 spot-checks, 5C the moat under its own logic, 5D every stated condition and falsifier, 5E internal consistency, 5F the strongest case the package is WRONG, 5H the live defect nobody in the package found). strategy/positioning.md carries a 12-entry 'Banned claims - permanent, enforced by shape not wording' section plus 'Objection handling', and notably a self-audit of the ban list itself headed 'This list failed its own first audit - read this before trusting it'. The kill memo produced real kills that reached the customer-facing copy: the '186 effects' figure (-> 168), the 'capsule-render is static, this one moves' comparison clause (refuted by live API probe), the '70 of 355 are static' false confession, and the '489x adoption gap' (fused comparison; corrected to ~2,590x like-for-like)."
+    },
+    {
+      "text": "An explicit monetization-vs-portfolio verdict is given that concretely addresses the free-rider embed-traffic cost problem (caps, sponsorship, paid tiers, or a reasoned 'keep it free'), not generic monetization advice.",
+      "passed": true,
+      "evidence": "strategy/monetization-verdict.md answers the free-rider premise directly rather than generically, and corrects it: 'Premise 1: \"MY Vercel account pays for THEIR traffic\" - substantially false' and 'Premise 2: \"other people's READMEs already embed it\" - true, but the number is 9'. The cost exposure is priced against fetched vendor terms - 'Vercel Hobby cannot bill you [PAGE] - vercel.com/docs/plans/hobby', the included allowances, and 'The trap that actually matters' (the 30-day pause rather than a bill). The verdict is explicit: README.md - 'No - and there is nothing to cap. Vercel Hobby pauses, it never bills ... Monetizing would force the Pro plan at $240/year to chase a pool of $0-45/year. The category's donation yield is ~1 sponsor per 1,800 stars, and this project's Sponsors button is already deployed and earning nothing. Keep it as a portfolio piece.' Each monetization shape the user asked about is handled with its own arithmetic (Archetype A developer, B companies wanting branded banners, C sponsorship/donations, each sized bottom-up), and the actionable cost lever is named and ranked ('Fix the cache header (10 minutes) - the only real cost lever', 'Add the free safety valve (30 minutes) - this is the \"cap\" worth having')."
+    },
+    {
+      "text": "The deliverable includes an explicit falsification section (e.g. 'What would prove this wrong').",
+      "passed": true,
+      "evidence": "Every substantive document carries one: strategy/monetization-verdict.md 'What would prove this verdict wrong' (plus 'What this report does NOT say', 'The steelman I could not refute' and 'Open gaps - what I could not verify'), research/2026-08-04-competitors-and-prior-art.md 'What would prove this report wrong', research/2026-08-04-product-diagnostic.md 'What would prove this report wrong', research/red-team/2026-08-04-kill-memo.md 'What would prove THIS memo wrong', and strategy/positioning.md 'What would change this positioning'. README.md adds 'The biggest gaps still open' naming four unchecked items including the highest-value one (whether GitHub is shipping native profile-header customization, 'would collapse the category')."
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "pass_rate": 1.0
+  },
+  "claims": [
+    {
+      "claim": "There are 168 distinct rendered effects, not the 186 registry entries.",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Method is stated and reproducible - each gradientType rendered through the live code path with inputs held constant, outputs hashed, 18 strings collapsing into 6 alias groups, with an example group given by name and corroboration from a source comment. The correction propagated to every downstream document (positioning, competitor report, diagnostic F6) rather than only to the errata table."
+    },
+    {
+      "claim": "capsule-render is static by default, so 'it moves' is a category difference.",
+      "type": "factual",
+      "verified": false,
+      "evidence": "Refuted by the run itself against capsule-render's live API: 5 of 6 sampled types ship continuously-looping background animation (blur 6, pulse 4, checkered 4, waving 2, venom 1, wave 0 looping elements). The run retracted it before publication and recorded the generative error - 'I audited the manifest, not the artifact.' Counted as verified-false but correctly handled."
+    },
+    {
+      "claim": "24 of 355 templates are non-deterministic and have been served with immutable year-long cache headers.",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Claim ledger cites the method (rendered x3, hashes compared) and the cause (Math.random in advancedEffectGenerator.js and templateUtils.js), cross-referenced with the live header at src/pages/api/svg.ts:22. Found by the red team and added to the diagnostic as F8 rather than being quietly folded in. Not independently re-run by the grader."
+    },
+    {
+      "claim": "11 of 355 templates lack a continuous loop.",
+      "type": "factual",
+      "verified": false,
+      "evidence": "Explicitly unresolved and reported as such: the claim ledger records '11 of 355 lack a continuous loop (red team: 45)' and grades it 'internal, disputed - both reported'. Flagging rather than reconciling is defensible here, but it means a customer-facing animation count is still unsettled."
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": [
+      "Whether GitHub is shipping native profile-header customization - unchecked, and named as the highest-value open gap because it would collapse the category.",
+      "Whether animated SVG survives GitHub's Camo proxy AS ANIMATED - the product's core premise, inferred from readme-typing-svg's adoption rather than confirmed against a policy page.",
+      "No dormant-twin sweep for an abandoned >355-template collection, which is the one finding that would kill the 'largest' claim outright.",
+      "No freelance/Fiverr price anchor for README design, and no developer sentiment data on whether animated banners read as appealing or noisy."
+    ],
+    "needs_review": [
+      "Five owner-only actions are listed as blocking, the first of which invalidates the cost analysis if it comes back differently: 'Read the Vercel Usage dashboard (10 min). Every conclusion about traffic and cost rests on numbers nobody has read.'",
+      "The product ships under two names (Gradient SVG Generator vs chromaflow in package.json); the run states no copy can ship until the owner picks one.",
+      "The static/looping template count is disputed between the analyst (11) and the red team (45); both are reported, neither is resolved."
+    ],
+    "workarounds": [
+      "The 'largest' claim was retired on grounds of unverifiability rather than resolved on the merits, because the dormant-twin sweep was not run.",
+      "Willingness-to-pay rests on category base rates because no direct price evidence was obtainable."
+    ]
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "The deliverable includes an explicit falsification section (e.g. 'What would prove this wrong')",
+        "reason": "Passed in both configurations and is close to free - a heading satisfies it. The discriminating version would require the falsifiers to be actionable: named instrument, numeric threshold, and a date or cost to run. Both runs happen to do this, but the assertion would not have caught it if they hadn't."
+      },
+      {
+        "assertion": "A red-team/objections/banned-claims artifact exists that anticipates hostile comments",
+        "reason": "Both configurations passed, but for very different work - the baseline shipped a colour-graded claims ledger and a wording-rules list inside a positioning document, while the skill run shipped a separate hostile-persona memo that actually overturned four claims in the package it was attacking. Consider requiring an outcome rather than an artifact: 'the red-team pass changed at least one customer-facing claim, and the change is recorded with the evidence that forced it'."
+      },
+      {
+        "reason": "No assertion checks whether the run verified the product by RUNNING it rather than reading its manifest - which is where the two configurations diverged most sharply on factual accuracy. Both runs counted 186 effects from the registry; only one rendered all 355 templates, found 18 aliases collapsing to 168, and caught 24 non-deterministic templates being served with immutable year-long caches. An assertion like 'at least one headline product number is corrected by direct measurement of the artifact, not the source manifest' would test the behaviour that mattered."
+      }
+    ],
+    "overall": "Five of six assertions passed in both configurations; only the competitor-URL assertion separated them, and it separated them on citation hygiene rather than analytical quality. The eval under-measures the largest real difference - the self-correction loop and measuring the artifact instead of the manifest."
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "eval_name": "eval-0-echook-viability",
+  "configuration": "without_skill",
+  "expectations": [
+    {
+      "text": "The deliverable includes an explicit falsification section (e.g. 'What would prove this wrong') listing specific checkable observations that would change the conclusion.",
+      "passed": true,
+      "evidence": "00-VERDICT.md has a section headed 'How to prove me wrong in two weeks, cheaply' specifying a concrete instrument and a numeric threshold: a fake-door 'echook Pro - $5/mo, coming soon' README button, 'Threshold: 30 distinct clicks. Below that, the answer is settled and you close the file', plus a stated falsifiable prediction ('you will get fewer than 10'). 04-evidence-and-method.md closes with 'What would change my verdict:' naming three checkable observations - the fake-door test clearing 30 clicks, 2026 Reddit evidence that the multi-agent cross-editor segment is 10x larger than HN suggests, or Anthropic removing rate_limits / terminalSequence. 02-who-would-pay.md adds 'The one buyer profile that would change my mind' with a specified buyer definition."
+    },
+    {
+      "text": "External market/competitor claims are backed by source URLs (at least 5 distinct URLs appear in the deliverables), rather than unsourced assertions from memory.",
+      "passed": true,
+      "evidence": "Mechanical count: 10 distinct http(s) URLs across 5 hosts, clearing the stated 5-URL bar. The load-bearing platform-substitution finding - the one the verdict turns on - is URL-backed and first-hand: code.claude.com/docs/en/hooks, /statusline, /analytics, /plugin-marketplaces, /skills, with byte counts of the fetched documents and verbatim JSON quoted from lines 267-276. Monetization comparables cite github.blog's $100M-for-open-source post; market context cites anthropic.com (Bun acquisition, Series G), cnbc.com and 2026.stateofai.dev. The run also demonstrates sourcing discipline in the opposite direction: section G 'Numbers deliberately excluded as unreliable' rejects five widely-repeated figures for lack of primary sourcing, and the '71% of hiring managers check GitHub' stat is explicitly flagged as content marketing not to be repeated. NOTE: this is a pass on the assertion as written, not a strong result - the competitor star tables, all HN quotes, and every buyer price anchor (LinearB, Jellyfish, Conductor, Omnara, Pushover-class comparables) carry no URL. See eval_feedback."
+    },
+    {
+      "text": "At least 2 named buyer archetypes are given, each with a concrete sourced price anchor (a real product/tier price, not an invented number).",
+      "passed": true,
+      "evidence": "02-who-would-pay.md defines five named segments (A solo developer, B multi-agent power user, C engineering manager wanting agent observability, D accessibility, E future employer/consulting client) and at least two carry real product/tier prices rather than invented numbers. Segment C: 'LinearB charges $29/contributor/mo (Essentials, 30-seat minimum) and $59 (Enterprise, 50-seat minimum), annual billing only' and 'Jellyfish's AI Impact module runs roughly $35-50/engineer/mo and explicitly tracks Claude Code'. Segment B: 'Conductor ($50/mo), Omnara ($20/mo)'. The seat minimums and billing terms indicate a real tier structure rather than a round guess, and 04-evidence-and-method.md section E repeats them under 'Team observability pricing' alongside DX and Faros ('contact sales'). The prices are not URL-sourced and carry no fetch date, so they cannot be re-verified from the deliverable - flagged in eval_feedback as a weakness of the assertion, not scored against this run."
+    },
+    {
+      "text": "There is an explicit, unhedged verdict classifying the opportunity (e.g. lifestyle/side-project vs venture-shaped, or 'keep it free'), with the conditions under which the verdict would flip — not 'it depends'.",
+      "passed": true,
+      "evidence": "00-VERDICT.md opens 'The answer you asked for' with: 'No. There is no business in echook as a product, and you should stop investing months in it.' It classifies the alternative explicitly - 'keep it as a finished, frozen portfolio piece and a cross-editor niche tool' - and quantifies the ceiling ('The honest revenue ceiling is $0-50/month'). 03-positioning-and-recommendation.md Part 5 restates it against the user's own three questions without hedging ('Is there a business? No.' / 'Who exactly would pay? Nobody you can currently reach.'). The flip condition is numeric and time-boxed: the 30-click fake-door threshold in 00-VERDICT.md, with recommendation 3 gated on it ('If you ignore this recommendation, ignore it only after the fake-door test clears 30 clicks')."
+    },
+    {
+      "text": "No 'first/only/no one else does this' claim about echook appears without accompanying prior-art evidence; adjacent/competing notification or DX tools are actually named.",
+      "passed": false,
+      "evidence": "The second conjunct is satisfied richly - 04-evidence-and-method.md section C tables ~15 named notification repos and 5 statusline repos with stars, dates and licences (vibe-notch 2,479, Claude-Code-Remote 1,275, Lucarne 324, wyattjoh/claude-code-notification 94, claude-hud 27,066, happy 23,083, ccusage 17,700, ccstatusline 12,203). The first conjunct fails, on the run's own load-bearing claim. 03-positioning-and-recommendation.md states 'What survives the platform's advance - exactly two things: 1. Cross-editor parity ... One notification layer that speaks all three is something no single vendor will ever build', and Part 2 turns that into the recommended README headline ('One notification layer for Claude Code, Cursor, and Codex'). No third-party prior art is checked on that axis anywhere: the ~25 competitors tabulated in section C are recorded with stars, dates and licences but NOT with editor coverage, so the one dimension declared to be echook's surviving moat is the one dimension never audited. The parallel claim is internally contradicted: 02-who-would-pay.md asserts Segment B is 'the only place echook has a genuine, unmet, independently requested capability' and that 'Distinct audio identity per parallel agent is a feature the platform structurally will not ship', while 04-evidence-and-method.md section D4 lists two existing implementations of exactly that - 'cmux-skills - green/yellow/red per workspace tab with sound and optional voice' and 'Voxlert - distinct character voice per Claude Code session'. The same-prompt with_skill run, sweeping the same ecosystem on the same day, found DevinoSolutions/anotifier-for-claude-codex-cursor (18 stars, 'Desktop + phone notifications for CC, Codex, Gemini, Cursor'), ctoth/claudio (CC+Codex audio), peon-ping (21 harnesses) and Cursor's own third-party-hooks compatibility layer, which it summarised as 'Cursor absorbed the cross-editor value prop with a checkbox' - so the unaudited claim is not merely unaudited but wrong in the direction that flatters the subject."
+    },
+    {
+      "text": "Any adoption metrics cited (stars, downloads, installs) are decomposed or explicitly caveated as to composition/meaning, not quoted raw as evidence of demand.",
+      "passed": true,
+      "evidence": "The clone metric is caveated at every appearance: 00-VERDICT.md's traction table reads 'Unique cloners, last 14d | 78 (137 clones) | Inflated by CI/mirrors; real installs are lower', and 04-evidence-and-method.md repeats 'Clones 137 total / 78 unique (inflated by CI, mirrors, and plugin-install git clones)'. Stars are decomposed rather than quoted raw - 'Star accrual, most recent 20 stars: 2026-05-10 -> 2026-08-03, i.e. 20 stars in ~86 days (0.23/day) - statistically identical to the lifetime average of 0.28/day. There was never an inflection point.' The zero-PR/one-issue figure is given two readings, both stated ('either almost nobody uses it, or people use it and it works so uneventfully that they never engage'). The derived user base is explicitly bounded: 'Estimated real user base: a few hundred ... There is no telemetry, so this is inferred from clone/visitor traffic. Do not model it higher.' Section G excludes five unreliable third-party adoption figures by name."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 1,
+    "total": 6,
+    "pass_rate": 0.83
+  },
+  "claims": [
+    {
+      "claim": "Cross-editor parity is a surviving differentiator that no one else occupies.",
+      "type": "factual",
+      "verified": false,
+      "evidence": "Asserted in 03-positioning-and-recommendation.md and 00-VERDICT.md with reasoning about vendor incentives only. No third-party tool was checked for editor coverage, and the with_skill run on the same prompt and date names at least three cross-harness competitors (anotifier-for-claude-codex-cursor, claudio, peon-ping) plus Cursor's native Claude-Code-hook compatibility layer. This is the run's recommended README headline, so the unverified claim is the one with the highest cost of being wrong."
+    },
+    {
+      "claim": "Anthropic's platform now natively ships both of echook's tracks (notifications and rate-limit/context statusline).",
+      "type": "factual",
+      "verified": true,
+      "evidence": "First-hand and URL-backed: fields quoted verbatim from the fetched statusline doc (rate_limits.five_hour / seven_day with used_percentage and resets_at, lines 267-276) and the Notification matcher list from the hooks doc, both at code.claude.com. The run flags this as the finding that changed its own verdict."
+    },
+    {
+      "claim": "No commerce rail exists in the Claude Code plugin/skill ecosystem.",
+      "type": "process",
+      "verified": true,
+      "evidence": "Verified by a stated grep method over fetched primary docs with byte counts: '199 occurrences of \"marketplace\", 3 of \"license\", and ZERO of pay*, monetiz*, billing, revenue, price, purchase, commerce' across 76,170 + 73,907 bytes. The with_skill run reached the same conclusion independently."
+    },
+    {
+      "claim": "Competitive star counts are first-hand from the GitHub API rather than second-hand from a subagent.",
+      "type": "process",
+      "verified": true,
+      "evidence": "04-evidence-and-method.md limitation 2 discloses that the competitive-landscape workstream was terminated early by a session limit and that its critical queries were re-run first-hand. Self-reported and not independently re-run by the grader, but the disclosure itself is the kind of provenance the assertion set is trying to reward."
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": [
+      "Reddit 2026 was inaccessible (host-blocked, jina proxy hit Reddit's 403 wall, PullPush stops mid-2025) - the most recent 12 months of the loudest community is not covered, and the run names this as the single gap most likely to overturn the verdict.",
+      "The accessibility segment is explicitly labelled a hypothesis inferred from the product's shape, not an evidenced demand finding.",
+      "Small-utility-tool price points and conversion rates are under-researched; the run flags it as its weakest section."
+    ],
+    "needs_review": [
+      "One of four research workstreams was terminated early by a session limit; its critical queries were re-run by the lead but the rest of its output was discarded.",
+      "No primary user research - no echook user was interviewed, and all user counts are order-of-magnitude inferences from GitHub traffic."
+    ],
+    "workarounds": [
+      "WebSearch budget was exhausted mid-run; most retrieval fell back to WebFetch against search HTML endpoints and direct pages.",
+      "Confidence tiers ([PRIMARY]/[SURVEY]/[ESTIMATE]/[WEAK]) were used in place of per-claim URLs for most figures."
+    ]
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "External market/competitor claims are backed by source URLs (at least 5 distinct URLs appear in the deliverables)",
+        "reason": "Non-discriminating as written. This run cleared the bar with 10 URLs while leaving every competitor star count, every HN quote and every buyer price anchor unsourced; the skill run produced 113 URLs with per-claim [PAGE] tags. The threshold measures whether the run cited anything at all, not whether its claims are traceable."
+      },
+      {
+        "assertion": "Any adoption metrics cited are decomposed or explicitly caveated",
+        "reason": "Both configurations passed comfortably - caveating clone counts is standard practice for a competent analyst. The discriminating version is whether the run REFUSES a contaminated metric rather than caveating it: the skill run computed a 78/85 cloner-to-viewer ratio, concluded no human population produces 92%, and banned the number from every document. Consider 'at least one adoption metric is rejected as unusable, with the arithmetic that condemned it'."
+      },
+      {
+        "reason": "The prior-art assertion is the only one that discriminated, and it nearly did not: it is phrased around the WORDS 'first/only/no one else', which a run can dodge by phrasing a uniqueness claim as vendor incentive ('no single vendor will ever build') while still shipping it as the headline. Consider rewriting to target the artifact: 'the differentiator the deliverable recommends leading with is checked against named third-party tools on that specific axis, and the check is shown'."
+      }
+    ],
+    "overall": "The baseline is strong - 5 of 6 - which is a real result, not a grading failure: it produced a numeric falsification test, an unhedged verdict, primary-source platform verification and disciplined metric caveating with no skill loaded. Only the prior-art assertion separated the configurations, and it did so on a substantive error rather than a formatting one."
+  }
+}

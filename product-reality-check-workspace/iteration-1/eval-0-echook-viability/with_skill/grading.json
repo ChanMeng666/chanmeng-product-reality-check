@@ -1,0 +1,102 @@
+{
+  "eval_name": "eval-0-echook-viability",
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "The deliverable includes an explicit falsification section (e.g. 'What would prove this wrong') listing specific checkable observations that would change the conclusion.",
+      "passed": true,
+      "evidence": "VERDICT.md has a section headed 'What would prove all of this wrong' containing a 6-row table (Signal / Why it decides things / How to test / Cost), each row a checkable observation with a threshold and a named instrument: '>=25 people pay $5' (Polar/Lemon Squeezy licence, 14-day count, 1 afternoon), '>=2 of 20 named orgs ask for a quote', 'Telemetry shows >=100 machines/week firing hooks', 'A sound-related Claude Code issue crosses ~40 reactions', 'Anthropic ships per-event notification config', 'peon-ping ships per-event granularity'. It also states the decision rule ('Items 1 and 2 landing together overturn the verdict; anything else dents it') and adds a dated 'steelman I could not refute' with an expiry of 2026-11-04. Five of the six research reports carry their own falsification section too ('What would prove this wrong' in competitor-sweep, prior-art-audit, base-rates, who-pays-and-sizing, product-diagnostic, kill-memo)."
+    },
+    {
+      "text": "External market/competitor claims are backed by source URLs (at least 5 distinct URLs appear in the deliverables), rather than unsourced assertions from memory.",
+      "passed": true,
+      "evidence": "Mechanical count over the 15 output files: 113 distinct http(s) URLs across 53 distinct hosts (107 distinct cited hosts including bare-domain citations). Hosts span primary vendor docs (code.claude.com/docs/en/hooks, /statusline, /plugin-marketplaces, /skills, cursor.com/docs/hooks.md, developers.openai.com/plugins/build/monetization, claude.com/pricing), pricing pages (pushover.net, alfredapp.com, raycast.com, pagerduty.com, langfuse.com, helicone.ai, langchain.com), competitor repos (github.com/PeonPing/peon-ping, /ctoth/claudio, /DevinoSolutions/anotifier-for-claude-codex-cursor, /Haleclipse/CCometixLine, /JessyTsui/Claude-Code-Remote and ~20 more), APIs actually queried (api.npmjs.org, registry.npmjs.org, api.github.com, hn.algolia.com, api.opencollective.com) and academic sources (cmustrudel.github.io/papers/overney20donations.pdf, pubsonline.informs.org). Claims are additionally tagged inline with [PAGE] / [SNIPPET] provenance markers, and claim-ledger.md records a spot-check of 24 rows."
+    },
+    {
+      "text": "At least 2 named buyer archetypes are given, each with a concrete sourced price anchor (a real product/tier price, not an invented number).",
+      "passed": true,
+      "evidence": "research/market/2026-08-04-who-pays-and-sizing.md defines four named archetypes (A1 individual power user, A2 organisations locked out of the native path, A3 the AI-coding-tool vendors, A4 agent-observability SaaS), each with an explicit 'Price anchor [PAGE]' subsection carrying real, URL-sourced tier prices: A1 - Pushover $4.99 one-time (pushover.net/pricing), Alfred Powerpack GBP 34 / GBP 59 (alfredapp.com/powerpack), Raycast Free/Pro $8-mo/Teams $12-user-mo (raycast.com/pricing); A2 - Pushover for Teams $5/user/mo and PagerDuty Professional $25 monthly / $21 annual, Business $49/$41 (pagerduty.com/pricing); A4 - Langfuse Core $29 / Pro $199 / Enterprise $2,499 (langfuse.com/pricing), Helicone Pro $79 / Team $799 (helicone.ai/pricing), LangSmith Plus $39/seat (langchain.com/pricing-langsmith). Each anchor also carries an explicit analogy caveat naming why it is an upper bound rather than a comparable (e.g. 'Pushover operates a hosted push-delivery network ... $4.99 is an upper bound on echook's price, not a comparable'). A3 reports the absence of a price as the finding, backed by a sourced acquisition table (Bun, Svelte/Vercel, GitLens/GitKraken, Humanloop)."
+    },
+    {
+      "text": "There is an explicit, unhedged verdict classifying the opportunity (e.g. lifestyle/side-project vs venture-shaped, or 'keep it free'), with the conditions under which the verdict would flip — not 'it depends'.",
+      "passed": true,
+      "evidence": "VERDICT.md, 'The verdict, in one sentence': 'No - there is no business in echook as a product, and the research says the answer is already decided rather than undecided; the best remaining lane is echook as evidence of what you can build.' It quantifies: 'The realistic annual pool for the software ... is $0-$200. Not \"small.\" Not \"early.\" The median outcome is zero, and three of the four archetypes size to exactly zero.' Flip conditions are numeric and dated: strategy/viability.md defines gates G1-G4 with reporting dates (G1 reports 2026-08-25, G2 2026-08-18, G3 2026-09-01, G4 2026-09-04) and VERDICT.md prints both thresholds of the commercial test - '>= 25 payers -> GO. Falsifies the assumption carrying ~100% of the realistic pool' and '<= 4 payers -> stop the commercial track'. The verdict also self-limits honestly rather than hedging, flagging the recommended maintainer lane as 'explicitly unresearched'."
+    },
+    {
+      "text": "No 'first/only/no one else does this' claim about echook appears without accompanying prior-art evidence; adjacent/competing notification or DX tools are actually named.",
+      "passed": true,
+      "evidence": "A dedicated 30KB prior-art audit (research/competitors/2026-08-04-prior-art-audit.md) grades all four uniqueness claims against named prior art and ends with a 'RETRACTIONS - exactly which words are now BANNED, and by what evidence' section plus a 'BANNED CITATIONS' list, propagated into marketing/copy/messaging-library.md ('The banned-claims list'). The headline claim was killed with evidence, not softened: '601,280 SKILL.md files on GitHub' and 'PeonPing/peon-ping - 4,973 stars, same niche, MIT, active - ships five Agent Skills whose config skill description is, near-verbatim, echook's pitch'. Claim 3 is graded 'PARTIALLY REFUTES ... \"Complete\" is dead' against DevinoSolutions/anotifier-for-claude-codex-cursor (CC+Codex+Gemini+Cursor), claudio and agent-tools. Where a residual superlative survives it carries its evidence and its limit inline ('This supports \"still shipping\", NOT \"the maintained one\" - echook's last push 2026-07-19 is older than nine active competitors'). VERDICT.md strikes two of its own claims after red team, including a withdrawn Anthropic quote the red team could not locate. 25+ competing tools are named with URLs across the sweep."
+    },
+    {
+      "text": "Any adoption metrics cited (stars, downloads, installs) are decomposed or explicitly caveated as to composition/meaning, not quoted raw as evidence of demand.",
+      "passed": true,
+      "evidence": "The clone metric is not merely caveated but banned: VERDICT.md - '78 unique cloners against 85 unique viewers is a 92% ratio that no human population produces. It is contaminated by machines to an unknown degree. It cannot be used, and I have banned it from every document.' Stars are decomposed by period against shipping activity ('New stars over the same period: 9 in June, 4 in July. The peak was 19, in April', plus 'A star was also removed during this four-hour engagement - 79 to 78'), and research/README.md logs correction C3 reconciling 9 vs 10 CI checkouts on the clone-spike day and C8 'The one instrument that exists may be measuring machines'. Traffic is reported as a 'de-spiked, de-CI'd baseline' in the product diagnostic. Competitor adoption is likewise decomposed - ccstatusline is cited as '407,682 monthly installs' from api.npmjs.org rather than stars, and the sweep separates the star count from the demand reading ('The category is thriving. echook is not in it')."
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "pass_rate": 1.0
+  },
+  "claims": [
+    {
+      "claim": "Every external number carries a source; every internal one carries a file path.",
+      "type": "process",
+      "verified": true,
+      "evidence": "Spot-checked against the outputs: 113 distinct URLs with [PAGE]/[SNIPPET] tags on external claims, and internal claims carry repo paths (bin/audio-hooks.py:162-203, README.md:11, plugins/audio-hooks/.claude-plugin/plugin.json:4). claim-ledger.md documents a 24-row spot-check and separately lists 'Known soft numbers, labelled at point of use'."
+    },
+    {
+      "claim": "The true hook count is 37, while the README says 39 and the repo description says 26.",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Cited to bin/audio-hooks.py:162-203 with the historical reconstruction verified via git show per tag (26 at v6.1.0, 39 at v6.2.0, 37 after v6.3.4's rollback). Not independently re-run by the grader - the source repo was not inspected - but the claim is internally consistent across VERDICT.md and the product diagnostic and carries line-level citations."
+    },
+    {
+      "claim": "The engagement corrected its own errors rather than shipping them (S1 differentiator, the 2,016-star figure, the convergent-invention assertion, a withdrawn Anthropic quote).",
+      "type": "quality",
+      "verified": true,
+      "evidence": "research/red-team/2026-08-04-kill-memo.md and research/red-team/2026-08-04-patch-record.md exist as separate artifacts with PATCHED vs 'STANDING AS OPEN EVIDENCE' sections, and the corrections appear struck through inline in VERDICT.md and strategy/positioning.md rather than being silently rewritten. research/README.md logs nine cross-report corrections (C1-C9), several of which reverse the synthesis's own preferred reading."
+    },
+    {
+      "claim": "Item 5 of the falsification table ('Anthropic ships per-event notification config') is a future signal to watch.",
+      "type": "factual",
+      "verified": false,
+      "evidence": "Internally inconsistent. Section S1 of the same document establishes that this has ALREADY happened - 'Claude Code's Notification hook matcher already filters on notification type ... permission_prompt, idle_prompt, auth_success, elicitation_dialog, elicitation_complete, elicitation_response, agent_needs_input, agent_completed [PAGE]' and states 'The falsifier I wrote for S1 had already fired before I wrote it'. Listing it in the forward-looking table as 'the most likely event on this list' with 'Watch the changelog monthly' contradicts that. Minor, and the document elsewhere flags the same error against itself; no assertion turns on it."
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": [
+      "Nobody has been asked - zero buyers interviewed; every archetype is reasoned, not observed (stated as the largest single weakness in the package).",
+      "No telemetry exists, so no adoption figure is available; the one usage-shaped number (clone traffic) was banned as machine-contaminated.",
+      "Cursor's in-app 'play sound on finish' setting could not be verified - three candidate URLs 404 and llms.txt has no notifications page."
+    ],
+    "needs_review": [
+      "The recommended maintainer/consulting lane is explicitly unresearched and its price anchor describes agencies, not solo maintainers.",
+      "The owner's own stopping condition was never recorded, so the gate thresholds were set by the analyst and may be the wrong instrument."
+    ],
+    "workarounds": [
+      "Deliverables use [PAGE]/[SNIPPET] provenance tags in place of a verification harness.",
+      "Where a figure failed re-checking (the '2,016 stars' aggregate) it was struck rather than adjusted."
+    ]
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "External market/competitor claims are backed by source URLs (at least 5 distinct URLs appear in the deliverables)",
+        "reason": "A 5-URL floor does not discriminate at all here - the baseline cleared it with 10 URLs while leaving its competitor star counts, HN quotes and every buyer price anchor unsourced, and the skill run produced 113. Consider requiring that the specific load-bearing claims carry URLs (e.g. 'every price anchor and every competitor adoption figure cited in the verdict resolves to a URL'), or raise the bar to a URL-per-external-claim ratio."
+      },
+      {
+        "assertion": "At least 2 named buyer archetypes are given, each with a concrete sourced price anchor",
+        "reason": "'Sourced' is glossed as 'a real product/tier price, not an invented number', which a run can satisfy from memory. The baseline passed on LinearB $29/$59 and Jellyfish $35-50 with no URL and no fetch date; the skill run attached a URL and an explicit analogy caveat to every anchor. Adding 'with a resolvable URL' would make this the second-most discriminating assertion in the eval."
+      },
+      {
+        "reason": "Nothing in the eval checks whether the run corrects its OWN errors, which is the largest observed behavioural difference. The skill run shipped a red-team kill memo, a patch record, a nine-item cross-report correction log and struck-through retractions in the customer-facing verdict (including withdrawing a quote it could not re-locate); the baseline shipped no self-correction artifact at all. An assertion like 'the deliverable records at least one claim the run itself retracted or corrected, with the evidence that forced it' would capture this."
+      },
+      {
+        "reason": "No assertion covers the sizing arithmetic being shown. Both runs give a revenue ceiling, but only one decomposes buyer counts into 'exists vs reachable' with the discount visible. 'Any market-size figure is built bottom-up from a stated buyer count and ACV, both visible' would test real work."
+      }
+    ],
+    "overall": "Four of the six assertions (falsification, URL floor, plain verdict, metrics caveating) passed in both configurations - they measure competent research writing, not this skill. The two that discriminate are the prior-art/superlative audit and, at the margin, the price-anchor sourcing. Tighten the URL and price-anchor assertions and add a self-correction assertion."
+  }
+}

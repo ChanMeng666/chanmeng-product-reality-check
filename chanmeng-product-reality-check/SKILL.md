@@ -1,5 +1,5 @@
 ---
-name: product-reality-check
+name: chanmeng-product-reality-check
 description: Adversarial market research, competitor and prior-art auditing, positioning, and product-narrative work for solo developers and indie hackers — validation-first, so the deliverable is truth rather than cheerleading. Use when the user asks who would actually pay for their product, whether a side project is viable or worth continuing, why nobody is using what they built, how to position, name, price or pitch it, what competitors exist, whether a "first / only / nobody else does this" claim survives contact with prior art, or wants market sizing, launch copy, a landing-page sanity check, an investor narrative or objection pack, or a red-team pass on any of the above. Also use when someone is about to build or launch and has not yet checked whether anyone wants it.
 ---
 

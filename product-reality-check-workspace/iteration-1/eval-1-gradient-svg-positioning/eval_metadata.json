@@ -1,0 +1,31 @@
+{
+  "eval_id": 1,
+  "eval_name": "eval-1-gradient-svg-positioning",
+  "prompt": "My side project gradient-svg-generator (repo at D:\\github_repository\\gradient-svg-generator, live at gradient-svg-generator.vercel.app) serves 340+ animated gradient SVG banner templates for GitHub READMEs — you embed a single URL, no install; there's also a visual editor and template gallery. It's free, MIT, and other people's READMEs already embed it, which means MY Vercel account pays for THEIR traffic. I want to (a) know the real competitive landscape — things like capsule-render and readme-typing-svg exist, (b) get positioning copy that won't fall apart under scrutiny — can I honestly claim to be 'the largest animated README banner collection' or is that going to blow up in my face, and (c) an honest read on whether/how to monetize this or whether I should just cap the costs and keep it as a portfolio piece.",
+  "assertions": [
+    {
+      "name": "largest-claim-explicitly-audited",
+      "text": "The 'largest animated README banner collection' superlative is explicitly audited against named competitors (e.g. template/feature counts of capsule-render and others) BEFORE being endorsed or rejected, with a clear verdict."
+    },
+    {
+      "name": "defensible-narrower-claim-supplied",
+      "text": "A narrower, defensible positioning claim is supplied (whether or not the superlative survives), phrased so a hostile commenter cannot refute it in one search."
+    },
+    {
+      "name": "competitor-table-with-sources",
+      "text": "At least 5 named competitors/alternatives in the README-widget ecosystem appear with source URLs."
+    },
+    {
+      "name": "hostile-scrutiny-pass-present",
+      "text": "A red-team/objections/banned-claims artifact exists that anticipates hostile comments (the user explicitly fears a repeat of being 'destroyed in the comments')."
+    },
+    {
+      "name": "monetization-verdict-addresses-freerider-costs",
+      "text": "An explicit monetization-vs-portfolio verdict is given that concretely addresses the free-rider embed-traffic cost problem (caps, sponsorship, paid tiers, or a reasoned 'keep it free'), not generic monetization advice."
+    },
+    {
+      "name": "falsification-section-present",
+      "text": "The deliverable includes an explicit falsification section (e.g. 'What would prove this wrong')."
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.invalid/product-reality-check/competitors.schema.json",
+  "$id": "https://example.invalid/chanmeng-product-reality-check/competitors.schema.json",
   "title": "Competitor database",
   "description": "data/competitors.json is an array of these. One entry per player found in the four-ring sweep (direct, adjacent up/down-market, non-product substitute, platform that could absorb this). Every entry carries last_verified; an entry older than 30 days is stale and may not be cited without re-verification.",
   "type": "array",

@@ -1,0 +1,31 @@
+{
+  "eval_id": 0,
+  "eval_name": "eval-0-echook-viability",
+  "prompt": "I've been building echook for months — an AI-operated audio notification system for Claude Code, Cursor and Codex (you install it once with a slash command, then control it in natural language; it plays sounds when your agent finishes, needs permission, or hits a rate limit, plus a context-usage status line). It's MIT, agent-first, v6.x, repo at D:\\github_repository\\claude-code-audio-hooks (github.com/ChanMeng666/echook). People seem to like it but I have zero revenue and honestly no idea whether anyone would ever PAY for something like this, who the real buyers would be, or whether I should keep it a free portfolio piece. Before I sink more months in: do proper market research and tell me straight — is there a business here, who exactly would pay, and how should I position it?",
+  "assertions": [
+    {
+      "name": "falsification-section-present",
+      "text": "The deliverable includes an explicit falsification section (e.g. 'What would prove this wrong') listing specific checkable observations that would change the conclusion."
+    },
+    {
+      "name": "external-claims-carry-session-urls",
+      "text": "External market/competitor claims are backed by source URLs (at least 5 distinct URLs appear in the deliverables), rather than unsourced assertions from memory."
+    },
+    {
+      "name": "named-buyer-archetypes-with-price-anchors",
+      "text": "At least 2 named buyer archetypes are given, each with a concrete sourced price anchor (a real product/tier price, not an invented number)."
+    },
+    {
+      "name": "plain-viability-verdict",
+      "text": "There is an explicit, unhedged verdict classifying the opportunity (e.g. lifestyle/side-project vs venture-shaped, or 'keep it free'), with the conditions under which the verdict would flip — not 'it depends'."
+    },
+    {
+      "name": "no-unaudited-superlative",
+      "text": "No 'first/only/no one else does this' claim about echook appears without accompanying prior-art evidence; adjacent/competing notification or DX tools are actually named."
+    },
+    {
+      "name": "adoption-metrics-decomposed-or-caveated",
+      "text": "Any adoption metrics cited (stars, downloads, installs) are decomposed or explicitly caveated as to composition/meaning, not quoted raw as evidence of demand."
+    }
+  ]
+}

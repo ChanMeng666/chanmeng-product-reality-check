@@ -1,0 +1,100 @@
+{
+  "eval_name": "eval-1-gradient-svg-positioning",
+  "configuration": "without_skill",
+  "expectations": [
+    {
+      "text": "The 'largest animated README banner collection' superlative is explicitly audited against named competitors (e.g. template/feature counts of capsule-render and others) BEFORE being endorsed or rejected, with a clear verdict.",
+      "passed": true,
+      "evidence": "02-positioning-copy.md Part 1 is the audit, and it is done against counted competitor internals rather than impressions: capsule-render's 15 type values enumerated from its source tree (10 static in model/normalModel/, 5 animated in model/animationModel/), 69 named colour presets counted by parsing src/gradient.json (31) + src/pallete.json (29) + src/pallete_theme.json (9), 5 text animations, and unbounded custom multi-stop colour via checkCustomColor in src/verification.ts. From that it builds the reachable-space table (15 x 69 = 1,035, x5 animations = 5,175, x reversal x section = 20,700) and reaches a two-part verdict stated up front: 'As phrased: no - it will blow up, and I can show you exactly how. Scoped precisely: yes - but you still shouldn't lead with it.' It also identifies the second-order kill the owner had not asked about - the run's own product count disagrees with itself (340+ / 355 / 359, four duplicate keys named individually) - and recommends pinning 355 with a test."
+    },
+    {
+      "text": "A narrower, defensible positioning claim is supplied (whether or not the superlative survives), phrased so a hostile commenter cannot refute it in one search.",
+      "passed": true,
+      "evidence": "Two are supplied, both checkable. The headline replaces the adjective with the number: '355 animated gradient banners for your GitHub README. One URL, no install.' - with the reasoning stated ('\"Largest\" is a claim a reader must take on trust. \"355\" is a fact they can verify in ten seconds'). The comparative is supplied in attributed form so the hedge does the defensive work: '186 distinct animated effects - more than any other README banner generator I could find (capsule-render, the most widely used, has 15).' The durable positioning is separated from the size claim entirely - Part 4, 'Not \"largest\". \"Curated, not configured.\"' - with an explicit argument for why it cannot be falsified by a 400-template competitor next month. Part 5 adds banned wording and Part 2's ledger grades the unscoped superlative red and the scoped version amber."
+    },
+    {
+      "text": "At least 5 named competitors/alternatives in the README-widget ecosystem appear with source URLs.",
+      "passed": false,
+      "evidence": "Sixteen competitors are named across 01-competitive-landscape.md and 04-evidence-log.md, but only 3 resolve to any URL anywhere in the deliverables. Mechanical check over all five files: capsule-render -> capsule-render.vercel.app (a search string in the embeds table, not a citation), readme-typing-svg -> readme-typing-svg.herokuapp.com / readme-typing-svg.demolab.com (same), shields -> opencollective.com/shields. The other thirteen appear as bare owner/repo strings with star counts and no URL: github-readme-stats, leviarista/github-profile-header-generator, whiteSHADOW1234/TypingSVG, vinimlo/galaxy-profile, collectioneur/readme-aura, sh4den/readme-animated-sweetbanner, mrhx01/TextGlow, asrvd/gitbanner, github-profile-trophy, skill-icons, SVG-Crafter, Waveify, READMEForge. The retrieval method is stated ('Rival sweep (GitHub search API, by stars)', 'gh api search/code -f q=...'), and only 14 distinct URLs appear in the whole run - almost all of them vendor pricing/policy pages for Vercel and Cloudflare rather than competitor sources. The claims are likely accurate; they are simply not traceable from the deliverable, which is what the assertion requires. The same-prompt with_skill run paired 10 named competitors with api.github.com or github.com URLs."
+    },
+    {
+      "text": "A red-team/objections/banned-claims artifact exists that anticipates hostile comments (the user explicitly fears a repeat of being 'destroyed in the comments').",
+      "passed": true,
+      "evidence": "Not a separate file, but a substantive artifact in three parts that does the job. 02-positioning-copy.md Part 2 is a 15-row claims ledger graded green/amber/red with the risk named per row, including three explicit reds - the unscoped superlative ('Falsifiable. capsule-render reaches 20,000+ named combinations'), 'Trusted by developers' ('9 third-party users. This would be the one that blows up') and the live X-Api-Usage: free-unlimited-usage header ('You're on Vercel Hobby - exceeding it is a 30-day hard lockout. You cannot keep this promise'). Part 5 'Wording rules' is a banned-claims list ('Stop saying: largest, best, most popular, trusted by developers, unlimited, production-ready, enterprise-grade, blazing fast'). 01-competitive-landscape.md section 6 'Where you are genuinely vulnerable' anticipates six specific counters. The hostile comment is simulated verbatim rather than gestured at: 'A sceptic doesn't need to work hard here. \"capsule-render does 20,000+ combinations, you have 355\" is a two-minute reply that makes your headline look like it was written without checking. That is the blow-up you were worried about, and it is real.' The Show HN draft is explicitly written to that constraint."
+    },
+    {
+      "text": "An explicit monetization-vs-portfolio verdict is given that concretely addresses the free-rider embed-traffic cost problem (caps, sponsorship, paid tiers, or a reasoned 'keep it free'), not generic monetization advice.",
+      "passed": true,
+      "evidence": "The verdict is explicit and it engages the free-rider premise by measuring it rather than accepting it: 'of 90 files embedding your URL, 73 (81%) are your own repos. Third-party: 17 files, 9 people - one of whom accounts for 9 of the 17. You are overwhelmingly paying for your own traffic.' The cost mechanics are worked from fetched vendor terms - Hobby's 1M edge requests as the binding constraint (not bandwidth, with the 11x arithmetic shown), the overage behaviour quoted verbatim ('you will have to wait until 30 days have passed'), and the finding that governs the whole question: Vercel's Fair Use clause makes 'Asking for Donations ... commercial usage', so 'A \"Buy me a coffee\" button on the current deployment is a terms violation.' Cost-capping is addressed concretely (add s-maxage, ship the category-standard best-effort disclaimer, soften the false free-unlimited-usage header, and migrate /api/svg to Cloudflare Workers if usage grows - modelled at ~$32 vs ~$208+ at 100M requests). Category precedent is priced: shields.io serves >1.6 billion images/month on $1,437/year. Verdict: 'portfolio piece - but a stronger one than you're getting credit for.'"
+    },
+    {
+      "text": "The deliverable includes an explicit falsification section (e.g. 'What would prove this wrong').",
+      "passed": true,
+      "evidence": "03-monetization-verdict.md section 8, 'What would change this verdict', lists four checkable triggers with thresholds: 'Vercel dashboard shows >10% of the edge-request allowance', 'Third-party embeds pass ~1,000 files (currently 17)', 'Someone asks to pay you, unprompted', and direct willingness-to-pay evidence if the blocked Fiverr/Upwork price data can be gathered manually. It is framed as a commitment device - 'Written down so you can check against them later rather than re-litigating'. 00-EXECUTIVE-SUMMARY.md adds 'What I could not verify' (four named gaps, each with its consequence) and 04-evidence-log.md section 8 lists six items with the reason each failed, including one that undercuts the run's own recommendation."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 1,
+    "total": 6,
+    "pass_rate": 0.83
+  },
+  "claims": [
+    {
+      "claim": "capsule-render reaches over 20,000 distinct named-parameter visuals (15 types x 69 colours x 5 animations x reversal x section).",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Counted from named source files rather than the competitor's README (src/gradient.json 31, src/pallete.json 29, src/pallete_theme.json 9, model/normalModel/ 10, model/animationModel/ 5), with the nine theme names enumerated. The arithmetic is shown and the method is reproducible. This is the strongest single piece of work in the run and it is the finding the positioning turns on."
+    },
+    {
+      "claim": "The project's cache headers are correct and capsule-render's are not, so its banners take an origin hit on nearly every README view.",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Verified by live probe with the transcript shown (curl -D -, Cache-Control: public, max-age=31536000, immutable, X-Vercel-Cache MISS then HIT) and Camo behaviour confirmed by an independent probe (X-Cache MISS -> HIT with X-Cache-Hits incrementing). The run also flags honestly that its own header works via undocumented behaviour, since Vercel's docs require s-maxage."
+    },
+    {
+      "claim": "186 distinct animated effects.",
+      "type": "factual",
+      "verified": false,
+      "evidence": "Measured as 186 distinct gradientType values - i.e. counted from the registry, not from rendered output. The with_skill run rendered every type with inputs held constant, hashed the outputs, and found 18 aliases collapsing into 6 groups for a true figure of 168. This run recommends '186 distinct animated effects' as approved public copy (claims ledger row 3, graded green, and the attributed comparative in Part 1), so the unverified number is one it is telling the owner to ship."
+    },
+    {
+      "claim": "352 of 355 templates genuinely animate; the three static ones are rainbow-layer, egg-shape and rounded-corners.",
+      "type": "factual",
+      "verified": false,
+      "evidence": "Derived by detecting SMIL <animate*> and CSS @keyframes emission (322 + 95) rather than by checking for a continuous loop. The with_skill run, rendering the same templates, reported 11 lacking a continuous loop with its red team reporting 45 - and additionally found 24 templates rendering non-deterministically, which this run's method could not surface. The named three are likely correct; the 352 figure is probably optimistic."
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": [
+      "Actual Vercel usage was never read - every cost claim is modelled from request volume, and the run repeatedly tells the owner to check the dashboard first because it 'beats every estimate in this document'.",
+      "Willingness-to-pay for README cosmetics could not be gathered - Fiverr and Upwork returned 403/CAPTCHA - so the monetization verdict rests on category base rates instead.",
+      "Camo's exact TTL and eviction policy are undocumented; only that it honours upstream Cache-Control was confirmed.",
+      "GitHub code search totals are approximate and index-capped, so the 2,590x gap is an order of magnitude rather than an exact figure."
+    ],
+    "needs_review": [
+      "Two live defects the owner must fix in code rather than copy: the X-Api-Usage: free-unlimited-usage header the project cannot honour on Hobby, and the package.json name mismatch (chromaflow).",
+      "The Vercel Fair Use finding - a donation button on the current deployment is a terms violation - is flagged as the single most actionable item and is independent of the monetization decision."
+    ],
+    "workarounds": [
+      "Competitor figures were gathered via the GitHub search API and stated as owner/repo plus star count rather than as citations, leaving them accurate but not traceable.",
+      "Effect and animation counts were derived from static analysis of the registry and emitted markup rather than from rendered, hashed output."
+    ]
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "At least 5 named competitors/alternatives in the README-widget ecosystem appear with source URLs",
+        "reason": "This is the only assertion that separated the two configurations in this eval, and it separated them on citation formatting rather than research quality - this run sweeps 16 competitors and counts a rival's preset library from its source JSON, which is deeper competitive work than a URL list demonstrates. Keep the assertion (traceability is a real requirement) but be aware it is measuring bibliography hygiene, and pair it with an assertion about competitor INTERNALS being measured rather than described."
+      },
+      {
+        "assertion": "The 'largest animated README banner collection' superlative is explicitly audited",
+        "reason": "Passed in both configurations and is the eval's headline question, so it cannot be dropped - but consider tightening it to require that the audit produce a NUMBER for at least one competitor's catalogue, obtained from that competitor's source or live API rather than its README. Both runs happened to do this; the assertion as written would pass on a paragraph of reasoning."
+      },
+      {
+        "reason": "No assertion checks the accuracy of the claims the deliverable tells the owner to SHIP. This run passes five of six while recommending '186 distinct animated effects' and '352 of 355 animate' as approved public copy; the other run rendered the artifact and found 168 and a disputed 11-vs-45. Since the user's stated fear is being destroyed in the comments, an assertion like 'every number in the approved copy was verified by running the product, and the verification method is stated' would test the outcome the user actually cares about."
+      }
+    ],
+    "overall": "A strong baseline - 5 of 6, with genuinely original work (counting capsule-render's presets from its source JSON, the Camo cache probe, the Vercel donations-are-commercial-usage finding). The single failure is citation traceability, and the eval does not currently test the thing that actually distinguished the runs: whether the recommended copy's numbers survive measuring the artifact."
+  }
+}

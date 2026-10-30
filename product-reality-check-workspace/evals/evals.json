@@ -1,0 +1,19 @@
+{
+  "skill_name": "product-reality-check",
+  "evals": [
+    {
+      "id": 0,
+      "eval_name": "echook-viability-and-buyers",
+      "prompt": "I've been building echook for months — an AI-operated audio notification system for Claude Code, Cursor and Codex (you install it once with a slash command, then control it in natural language; it plays sounds when your agent finishes, needs permission, or hits a rate limit, plus a context-usage status line). It's MIT, agent-first, v6.x, repo at D:\\github_repository\\claude-code-audio-hooks (github.com/ChanMeng666/echook). People seem to like it but I have zero revenue and honestly no idea whether anyone would ever PAY for something like this, who the real buyers would be, or whether I should keep it a free portfolio piece. Before I sink more months in: do proper market research and tell me straight — is there a business here, who exactly would pay, and how should I position it?",
+      "expected_output": "An honest market-research deliverable grounded in the real repo and live web sources: competitor/prior-art sweep of the AI-coding-agent notification/DX-tooling space, named buyer archetypes with sourced price anchors, bottom-up sizing that says plainly whether this is lifestyle-, side-project- or venture-shaped, a positioning recommendation, and explicit 'what would prove this wrong' content. No unaudited superlatives, no cheerleading, every external number sourced with URLs fetched during the session.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "eval_name": "gradient-svg-positioning-survives-scrutiny",
+      "prompt": "My side project gradient-svg-generator (repo at D:\\github_repository\\gradient-svg-generator, live at gradient-svg-generator.vercel.app) serves 340+ animated gradient SVG banner templates for GitHub READMEs — you embed a single URL, no install; there's also a visual editor and template gallery. It's free, MIT, and other people's READMEs already embed it, which means MY Vercel account pays for THEIR traffic. I want to (a) know the real competitive landscape — things like capsule-render and readme-typing-svg exist, (b) get positioning copy that won't fall apart under scrutiny — can I honestly claim to be 'the largest animated README banner collection' or is that going to blow up in my face, and (c) an honest read on whether/how to monetize this or whether I should just cap the costs and keep it as a portfolio piece.",
+      "expected_output": "Competitor research with live sources across the README-widget ecosystem; a uniqueness/prior-art audit that explicitly tests the 'largest collection' superlative before using it and supplies a defensible narrower claim if it fails; positioning copy plus a banned-claims list; an honest monetization/cost analysis (free-rider embed traffic, realistic willingness-to-pay in the README-decoration niche) with a plain lifestyle-vs-business verdict; and a red-team pass anticipating hostile scrutiny.",
+      "files": []
+    }
+  ]
+}
