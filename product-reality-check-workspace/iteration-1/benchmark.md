@@ -1,4 +1,4 @@
-# Skill Benchmark: product-reality-check
+# Skill Benchmark: chanmeng-product-reality-check
 
 **Model**: claude-opus-5
 **Date**: 2026-08-04T09:21:53Z

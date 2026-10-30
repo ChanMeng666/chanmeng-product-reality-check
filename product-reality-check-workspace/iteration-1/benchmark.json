@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "skill_name": "product-reality-check",
-    "skill_path": "D:\\github_repository\\product-reality-check\\product-reality-check",
+    "skill_name": "chanmeng-product-reality-check",
+    "skill_path": "D:\\github_repository\\chanmeng-product-reality-check\\chanmeng-product-reality-check",
     "executor_model": "claude-opus-5",
     "analyzer_model": "claude-opus-5",
     "timestamp": "2026-08-04T09:21:53Z",
