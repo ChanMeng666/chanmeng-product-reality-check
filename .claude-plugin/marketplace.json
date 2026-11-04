@@ -1,0 +1,28 @@
+{
+  "name": "chanmeng-product-reality-check",
+  "description": "Chan Meng's chanmeng-product-reality-check plugin for Claude Code.",
+  "owner": {
+    "name": "Chan Meng",
+    "url": "https://github.com/ChanMeng666"
+  },
+  "plugins": [
+    {
+      "name": "chanmeng-product-reality-check",
+      "source": "./",
+      "description": "Claude agent skill for validation-first market research: competitor sweeps, prior-art audits of every 'first/only' claim, bottom-up sizing, red-team kill memos and dated evidence gates — so your side project meets reality before you sink months into it.",
+      "category": "productivity",
+      "tags": [
+        "agent-skills",
+        "ai-agents",
+        "claude",
+        "claude-code",
+        "competitive-analysis",
+        "indie-hackers",
+        "market-research",
+        "product-management",
+        "product-positioning",
+        "side-projects"
+      ]
+    }
+  ]
+}

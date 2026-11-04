@@ -39,6 +39,21 @@ Concretely, it forces five things that hand-waved validation skips:
 
 ## Install
 
+### As a Claude Code plugin (recommended)
+
+```text
+/plugin install chanmeng-product-reality-check --marketplace ChanMeng666/chanmeng-product-reality-check
+```
+
+On Claude Code older than 2.1.275, add the marketplace first:
+
+```text
+/plugin marketplace add ChanMeng666/chanmeng-product-reality-check
+/plugin install chanmeng-product-reality-check@chanmeng-product-reality-check
+```
+
+### Manual install
+
 Copy the inner `chanmeng-product-reality-check/` directory into your skills folder:
 
 ```bash
